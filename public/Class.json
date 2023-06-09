@@ -5,7 +5,8 @@
     "instructorName": "Michael Anderson",
     "totalSeats": 10,
     "price": 20,
-    "enrolled": 0
+    "enrolled": 0,
+    "status": "pending"
   },
   {
     "name": "Advanced Sparring",
@@ -13,7 +14,8 @@
     "instructorName": "Michael Anderson",
     "totalSeats": 10,
     "price": 25,
-    "enrolled": 0
+    "enrolled": 0,
+    "status": "pending"
   },
   {
     "name": "Ground Techniques",
@@ -21,7 +23,8 @@
     "instructorName": "Michael Anderson",
     "totalSeats": 10,
     "price": 30,
-    "enrolled": 0
+    "enrolled": 0,
+    "status": "pending"
   },
   {
     "name": "Taekwondo Fundamentals",
@@ -29,7 +32,8 @@
     "instructorName": "Lily Chen",
     "totalSeats": 10,
     "price": 15,
-    "enrolled": 0
+    "enrolled": 0,
+    "status": "pending"
   },
   {
     "name": "Kicking Techniques",
@@ -37,7 +41,8 @@
     "instructorName": "Lily Chen",
     "totalSeats": 10,
     "price": 20,
-    "enrolled": 0
+    "enrolled": 0,
+    "status": "pending"
   },
   {
     "name": "Sparring Strategies",
@@ -45,7 +50,8 @@
     "instructorName": "Lily Chen",
     "totalSeats": 10,
     "price": 25,
-    "enrolled": 0
+    "enrolled": 0,
+    "status": "pending"
   },
   {
     "name": "Fundamentals of Jiu-Jitsu",
@@ -53,7 +59,8 @@
     "instructorName": "David Ramirez",
     "totalSeats": 10,
     "price": 25,
-    "enrolled": 0
+    "enrolled": 0,
+    "status": "pending"
   },
   {
     "name": "Advanced Ground Control",
@@ -61,7 +68,8 @@
     "instructorName": "David Ramirez",
     "totalSeats": 10,
     "price": 30,
-    "enrolled": 0
+    "enrolled": 0,
+    "status": "pending"
   },
   {
     "name": "Submission Techniques",
@@ -69,7 +77,8 @@
     "instructorName": "David Ramirez",
     "totalSeats": 10,
     "price": 35,
-    "enrolled": 0
+    "enrolled": 0,
+    "status": "pending"
   },
   {
     "name": "Krav Maga Essentials",
@@ -77,6 +86,16 @@
     "instructorName": "Sophia Lee",
     "totalSeats": 10,
     "price": 20,
-    "enrolled": 0
+    "enrolled": 0,
+    "status": "pending"
+  },
+  {
+    "name": "Krav Maga Essentials",
+    "image": "https://i.ibb.co/ZT29ZVv/class-6.jpg",
+    "instructorName": "Sophia Lee",
+    "totalSeats": 10,
+    "price": 20,
+    "enrolled": 0,
+    "status": "approved"
   }
 ]

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "/public/logo.png";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
@@ -44,7 +44,7 @@ const Navbar = () => {
                 <Link to="/instructor">Instructors</Link>
               </li>
               <li>
-                <Link to="/">Classes</Link>
+                <Link to="/allClass">Classes</Link>
               </li>
               {user ? (
                 <>
@@ -114,7 +114,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/"
+                to="/allClass"
                 className={({ isActive }) => (isActive ? "active" : "default")}
               >
                 Classes

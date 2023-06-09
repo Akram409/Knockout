@@ -51,32 +51,26 @@ const Login = () => {
 
   const handleGoogle = () => {
     googleSignIn()
-      .then((result) => {
-        const user = result.user;
-        toast.success("Login Successfull!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
-        navigate(from, { replace: true });
-        console.log(user);
+    .then((result) => {
+      const user = result.user;
+      const saveUser = {
+        name: user.displayName,
+        email: user.email,
+        position: "user"
+      };
+      fetch("http://localhost:5000/users", {
+        method: "POST",
+        headers: {
+        "content-type": "application/json",
+        },
+        body: JSON.stringify(saveUser),
       })
+      .then((res) => res.json())
+      .then(() => {
+        navigate(from, { replace: true });
+      });
+    })
       .catch((error) => {
-        toast.warning("Login Unccessfull!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
         setError(error.message);
         console.log(error.message);
       });

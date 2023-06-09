@@ -1,14 +1,13 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useLocation, useNavigate, useNavigation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
-import { toast } from "react-toastify";
 import Lottie from "lottie-react";
 import logins from "../../assets/login.json";
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
   const {
@@ -33,62 +32,56 @@ const Register = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
 
-    //   updateUserProfile(data.name, data.photoURL)
-    //     .then(() => {
-    //       const saveUser = { name: data.name, email: data.email };
-    //       fetch("http://localhost:5000/users", {
-    //         method: "POST",
-    //         headers: {
-    //           "content-type": "application/json",
-    //         },
-    //         body: JSON.stringify(saveUser),
-    //       })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //           if (data.insertedId) {
-    //             reset();
-    //             Swal.fire({
-    //               position: "top-end",
-    //               icon: "success",
-    //               title: "User created successfully.",
-    //               showConfirmButton: false,
-    //               timer: 1500,
-    //             });
-    //             navigate("/");
-    //           }
-    //         });
-    //     })
-    //     .catch((error) => console.log(error));
+      updateUserProfile(data.name, data.photoURL)
+        .then(() => {
+          const saveUser = { name: data.name, email: data.email , position: "user" };
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveUser),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId) {
+                reset();
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "User created successfully.",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                navigate(from, { replace: true });
+              }
+            });
+        })
+        .catch((error) => console.log(error));
     });
   };
   const handleGoogle = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
-        toast.success("Login Successfull!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
+        const saveUser = {
+          name: user.displayName,
+          email: user.email,
+          position: "user"
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+          "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+        .then((res) => res.json())
+        .then(() => {
+          navigate(from, { replace: true });
         });
-        navigate(from, { replace: true });
-        console.log(user);
       })
       .catch((error) => {
-        toast.warning("Login Unccessfull!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
         console.log(error.message);
       });
   };
