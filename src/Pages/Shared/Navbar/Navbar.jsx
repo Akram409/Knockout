@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "/public/logo.png";
-import { AuthContext } from "../../../Providers/AuthProvider";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -10,9 +10,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-red-500">
+    <>
       <div
-        className="navbar text-white container mx-auto;
+        className="navbar fixed z-10 bg-opacity-70 px-5 py-5 bg-[#0d1122] text-white 
 "
       >
         <div className="navbar-start">
@@ -205,7 +205,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

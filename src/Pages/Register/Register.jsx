@@ -33,7 +33,32 @@ const Register = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
 
-
+    //   updateUserProfile(data.name, data.photoURL)
+    //     .then(() => {
+    //       const saveUser = { name: data.name, email: data.email };
+    //       fetch("http://localhost:5000/users", {
+    //         method: "POST",
+    //         headers: {
+    //           "content-type": "application/json",
+    //         },
+    //         body: JSON.stringify(saveUser),
+    //       })
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //           if (data.insertedId) {
+    //             reset();
+    //             Swal.fire({
+    //               position: "top-end",
+    //               icon: "success",
+    //               title: "User created successfully.",
+    //               showConfirmButton: false,
+    //               timer: 1500,
+    //             });
+    //             navigate("/");
+    //           }
+    //         });
+    //     })
+    //     .catch((error) => console.log(error));
     });
   };
   const handleGoogle = () => {
@@ -142,10 +167,8 @@ const Register = () => {
                     type="password"
                     {...register("password", {
                       required: true,
-                      minLength: 6,
-                      maxLength: 20,
                       pattern:
-                        /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+                        /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[a-z])/,
                     })}
                     placeholder="password"
                     className="input input-bordered"
@@ -158,15 +181,9 @@ const Register = () => {
                       Password must be 6 characters
                     </p>
                   )}
-                  {errors.password?.type === "maxLength" && (
-                    <p className="text-red-600">
-                      Password must be less than 20 characters
-                    </p>
-                  )}
                   {errors.password?.type === "pattern" && (
                     <p className="text-red-600">
-                      Password must have one Uppercase one lower case, one
-                      number and one special character.
+                      Password must have one Uppercase one lower case and one special character.
                     </p>
                   )}
                 </div>
@@ -178,10 +195,6 @@ const Register = () => {
                     type="password"
                     {...register("confirm_password", {
                       required: true,
-                      minLength: 6,
-                      maxLength: 20,
-                      pattern:
-                        /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
                     })}
                     placeholder="Confirm password"
                     className="input input-bordered"
