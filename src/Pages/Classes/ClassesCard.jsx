@@ -4,16 +4,16 @@ import { MdEventSeat, MdOutlineAttachMoney } from "react-icons/md";
 const ClassesCard = ({ item }) => {
   const { name, image, instructorName, totalSeats, price } = item;
   return (
-      <div className="card bg-[#13182a] shadow-2xl text-center">
-        <figure className="img-fluid w-full h-1/2">
+      <div className="card max-h-fit mx-3 bg-[#13182a] shadow-2xl text-center">
+        <figure className="img-fluid w-full">
           <img src={image} className="w-full h-72" alt="Image Alt" />
         </figure>
         <div className="card-body mx-auto text-white ">
-          <h2 className="text-3xl font-bold pb-1">{name}</h2>
+          <h2 className="text-2xl font-bold pb-1">{name}</h2>
           <div className="flex gap-2 items-center justify-start">
             <GiTeacher size="2em" color="red" />
             <span className="text-xl font-bold">
-              Instructor: {instructorName}
+              {instructorName}
             </span>
           </div>
           <div className="flex gap-2 items-center justify-start">
