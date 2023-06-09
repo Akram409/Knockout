@@ -41,14 +41,22 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/blog">Blog</Link>
+                <Link to="/">Instructors</Link>
+              </li>
+              <li>
+                <Link to="/">Classes</Link>
               </li>
               {user ? (
-                <li>
-                  <Link className="text-xl" to="/" onClick={handleLogOut}>
-                    LogOut
-                  </Link>
-                </li>
+                <>
+                  <li>
+                    <Link to="/">Dashboard</Link>
+                  </li>
+                  <li>
+                    <Link className="text-xl" to="/" onClick={handleLogOut}>
+                      LogOut
+                    </Link>
+                  </li>
+                </>
               ) : (
                 <>
                   <li>
@@ -104,8 +112,24 @@ const Navbar = () => {
                 Instructors
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Classes
+              </NavLink>
+            </li>
             {user ? (
               <>
+              <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Dashboard
+              </NavLink>
+            </li>
                 <li>
                   <Link to="/" onClick={handleLogOut}>
                     LogOut

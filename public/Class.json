@@ -1,83 +1,82 @@
 [
-    {
-      "name": "Karate Basics",
-      "image": "https://example.com/karate_basics.jpg",
-      "instructorName": "Michael Anderson",
-      "totalSeats": 25,
-      "availableSeats": 0,
-      "price": 20
-    },
-    {
-      "name": "Advanced Sparring",
-      "image": "https://example.com/advanced_sparring.jpg",
-      "instructorName": "Michael Anderson",
-      "totalSeats": 20,
-      "availableSeats": 0,
-      "price": 25
-    },
-    {
-      "name": "Ground Techniques",
-      "image": "https://example.com/ground_techniques.jpg",
-      "instructorName": "Michael Anderson",
-      "totalSeats": 15,
-      "availableSeats": 0,
-      "price": 30
-    },
-    {
-      "name": "Taekwondo Fundamentals",
-      "image": "https://example.com/taekwondo_fundamentals.jpg",
-      "instructorName": "Lily Chen",
-      "totalSeats": 30,
-      "availableSeats": 0,
-      "price": 15
-    },
-    {
-      "name": "Kicking Techniques",
-      "image": "https://example.com/kicking_techniques.jpg",
-      "instructorName": "Lily Chen",
-      "totalSeats": 20,
-      "availableSeats": 0,
-      "price": 20
-    },
-    {
-      "name": "Sparring Strategies",
-      "image": "https://example.com/sparring_strategies.jpg",
-      "instructorName": "Lily Chen",
-      "totalSeats": 15,
-      "availableSeats": 0,
-      "price": 25
-    },
-    {
-      "name": "Fundamentals of Jiu-Jitsu",
-      "image": "https://example.com/fundamentals_of_jiu_jitsu.jpg",
-      "instructorName": "David Ramirez",
-      "totalSeats": 20,
-      "availableSeats": 0,
-      "price": 25
-    },
-    {
-      "name": "Advanced Ground Control",
-      "image": "https://example.com/advanced_ground_control.jpg",
-      "instructorName": "David Ramirez",
-      "totalSeats": 15,
-      "availableSeats": 0,
-      "price": 30
-    },
-    {
-      "name": "Submission Techniques",
-      "image": "https://example.com/submission_techniques.jpg",
-      "instructorName": "David Ramirez",
-      "totalSeats": 10,
-      "availableSeats": 0,
-      "price": 35
-    },
-    {
-      "name": "Krav Maga Essentials",
-      "image": "https://example.com/krav_maga_essentials.jpg",
-      "instructorName": "Sophia Lee",
-      "totalSeats": 25,
-      "availableSeats": 0,
-      "price": 20
-    }
-  ]
-  
+  {
+    "name": "Karate Basics",
+    "image": "https://i.ibb.co/9ntGkF8/class-1.jpg",
+    "instructorName": "Michael Anderson",
+    "totalSeats": 10,
+    "availableSeats": 0,
+    "price": 20
+  },
+  {
+    "name": "Advanced Sparring",
+    "image": "https://i.ibb.co/mtZBc9z/class-2.jpg",
+    "instructorName": "Michael Anderson",
+    "totalSeats": 10,
+    "availableSeats": 0,
+    "price": 25
+  },
+  {
+    "name": "Ground Techniques",
+    "image": "https://i.ibb.co/QYxCYCp/class-3.jpg",
+    "instructorName": "Michael Anderson",
+    "totalSeats": 10,
+    "availableSeats": 0,
+    "price": 30
+  },
+  {
+    "name": "Taekwondo Fundamentals",
+    "image": "https://i.ibb.co/jgVsyK1/class-4.jpg",
+    "instructorName": "Lily Chen",
+    "totalSeats": 10,
+    "availableSeats": 0,
+    "price": 15
+  },
+  {
+    "name": "Kicking Techniques",
+    "image": "https://i.ibb.co/9rbJVDm/class-3.jpg",
+    "instructorName": "Lily Chen",
+    "totalSeats": 10,
+    "availableSeats": 0,
+    "price": 20
+  },
+  {
+    "name": "Sparring Strategies",
+    "image": "https://i.ibb.co/mtZBc9z/class-2.jpg",
+    "instructorName": "Lily Chen",
+    "totalSeats": 10,
+    "availableSeats": 0,
+    "price": 25
+  },
+  {
+    "name": "Fundamentals of Jiu-Jitsu",
+    "image": "https://i.ibb.co/9ntGkF8/class-1.jpg",
+    "instructorName": "David Ramirez",
+    "totalSeats": 10,
+    "availableSeats": 0,
+    "price": 25
+  },
+  {
+    "name": "Advanced Ground Control",
+    "image": "https://i.ibb.co/QYxCYCp/class-4.jpg",
+    "instructorName": "David Ramirez",
+    "totalSeats": 10,
+    "availableSeats": 0,
+    "price": 30
+  },
+  {
+    "name": "Submission Techniques",
+    "image": "https://i.ibb.co/jgVsyK1/class-5.jpg",
+    "instructorName": "David Ramirez",
+    "totalSeats": 10,
+    "availableSeats": 0,
+    "price": 35
+  },
+  {
+    "name": "Krav Maga Essentials",
+    "image": "https://i.ibb.co/ZT29ZVv/class-6.jpg",
+    "instructorName": "Sophia Lee",
+    "totalSeats": 10,
+    "availableSeats": 0,
+    "price": 20
+  }
+]
