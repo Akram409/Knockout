@@ -1,0 +1,83 @@
+[
+    {
+      "name": "Karate Basics",
+      "image": "https://example.com/karate_basics.jpg",
+      "instructorName": "Michael Anderson",
+      "totalSeats": 25,
+      "availableSeats": 0,
+      "price": 20
+    },
+    {
+      "name": "Advanced Sparring",
+      "image": "https://example.com/advanced_sparring.jpg",
+      "instructorName": "Michael Anderson",
+      "totalSeats": 20,
+      "availableSeats": 0,
+      "price": 25
+    },
+    {
+      "name": "Ground Techniques",
+      "image": "https://example.com/ground_techniques.jpg",
+      "instructorName": "Michael Anderson",
+      "totalSeats": 15,
+      "availableSeats": 0,
+      "price": 30
+    },
+    {
+      "name": "Taekwondo Fundamentals",
+      "image": "https://example.com/taekwondo_fundamentals.jpg",
+      "instructorName": "Lily Chen",
+      "totalSeats": 30,
+      "availableSeats": 0,
+      "price": 15
+    },
+    {
+      "name": "Kicking Techniques",
+      "image": "https://example.com/kicking_techniques.jpg",
+      "instructorName": "Lily Chen",
+      "totalSeats": 20,
+      "availableSeats": 0,
+      "price": 20
+    },
+    {
+      "name": "Sparring Strategies",
+      "image": "https://example.com/sparring_strategies.jpg",
+      "instructorName": "Lily Chen",
+      "totalSeats": 15,
+      "availableSeats": 0,
+      "price": 25
+    },
+    {
+      "name": "Fundamentals of Jiu-Jitsu",
+      "image": "https://example.com/fundamentals_of_jiu_jitsu.jpg",
+      "instructorName": "David Ramirez",
+      "totalSeats": 20,
+      "availableSeats": 0,
+      "price": 25
+    },
+    {
+      "name": "Advanced Ground Control",
+      "image": "https://example.com/advanced_ground_control.jpg",
+      "instructorName": "David Ramirez",
+      "totalSeats": 15,
+      "availableSeats": 0,
+      "price": 30
+    },
+    {
+      "name": "Submission Techniques",
+      "image": "https://example.com/submission_techniques.jpg",
+      "instructorName": "David Ramirez",
+      "totalSeats": 10,
+      "availableSeats": 0,
+      "price": 35
+    },
+    {
+      "name": "Krav Maga Essentials",
+      "image": "https://example.com/krav_maga_essentials.jpg",
+      "instructorName": "Sophia Lee",
+      "totalSeats": 25,
+      "availableSeats": 0,
+      "price": 20
+    }
+  ]
+  

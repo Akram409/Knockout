@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Admin",
+    "image": "https://example.com/michael_anderson.jpg",
+    "email": "admin@gmail.com",
+    "biography": "admin is a highly skilled martial artist with over 15 years of experience in various disciplines. He has trained under renowned masters from around the world and is dedicated to sharing his knowledge and passion for martial arts.",
+    "skills": ["Karate", "Muay Thai", "Jiu-Jitsu"],
+    "message": "Unlock your true potential through martial arts. Embrace discipline, determination, and resilience, and watch yourself grow stronger with each training session.",
+    "experience": 15,
+    "position": "Admin",
+    "classesTaken": 12,
+    "classes": ["Karate Basics", "Advanced Sparring", "Ground Techniques"]
+  },
+  {
+    "name": "Michael Anderson",
+    "image": "https://i.ibb.co/Z8F6PZK/instructor-1.jpg",
+    "email": "michael.anderson@example.com",
+    "biography": "Michael Anderson is a highly skilled martial artist with over 15 years of experience in various disciplines. He has trained under renowned masters from around the world and is dedicated to sharing his knowledge and passion for martial arts.",
+    "skills": ["Karate", "Muay Thai", "Jiu-Jitsu"],
+    "message": "Unlock your true potential through martial arts. Embrace discipline, determination, and resilience, and watch yourself grow stronger with each training session.",
+    "experience": 15,
+    "position": "Instructor",
+    "classesTaken": 12,
+    "classes": ["Karate Basics", "Advanced Sparring", "Ground Techniques"]
+  },
+  {
+    "name": "Lily Chen",
+    "image": "https://i.ibb.co/Ch0nd85/instructor-2.jpg",
+    "email": "lily.chen@example.com",
+    "biography": "Lily Chen is a dedicated martial artist who specializes in Taekwondo. With a black belt and multiple championship titles, she aims to inspire her students to push their limits and achieve greatness.",
+    "skills": ["Taekwondo", "Kickboxing"],
+    "message": "Rise above your fears and become the best version of yourself. Martial arts is not just about physical strength; it's a path to self-discovery and personal growth.",
+    "experience": 10,
+    "position": "Instructor",
+    "classesTaken": 8,
+    "classes": [
+      "Taekwondo Fundamentals",
+      "Kicking Techniques",
+      "Sparring Strategies"
+    ]
+  },
+  {
+    "name": "David Ramirez",
+    "image": "https://i.ibb.co/mCv7JDy/instructor-3.jpg",
+    "email": "david.ramirez@example.com",
+    "biography": "David Ramirez is a seasoned martial artist specializing in Brazilian Jiu-Jitsu. He believes that martial arts can empower individuals both mentally and physically, and he is committed to helping his students develop confidence and self-defense skills.",
+    "skills": ["Brazilian Jiu-Jitsu", "Wrestling"],
+    "message": "In martial arts, every setback is an opportunity to learn and grow. Embrace the challenges, stay persistent, and you'll achieve what you once thought was impossible.",
+    "experience": 12,
+    "position": "Instructor",
+    "classesTaken": 10,
+    "classes": [
+      "Fundamentals of Jiu-Jitsu",
+      "Advanced Ground Control",
+      "Submission Techniques"
+    ]
+  },
+  {
+    "name": "Sophia Lee",
+    "image": "https://i.ibb.co/99JpQFX/instructor-4.jpg",
+    "email": "sophia.lee@example.com",
+    "biography": "Sophia Lee is a versatile martial artist proficient in Krav Maga and Kung Fu. Her training focuses on practical self-defense techniques and building mental resilience. She is passionate about empowering individuals to protect themselves and live with confidence.",
+    "skills": ["Krav Maga", "Kung Fu"],
+    "message": "Martial arts is not just about fighting; it's about self-improvement, self-confidence, and self-discipline. Step onto the mat, face your challenges head-on, and become the hero of your own story.",
+    "experience": 8,
+    "position": "Instructor",
+    "classesTaken": 6,
+    "classes": [
+      "Krav Maga Essentials",
+      "Kung Fu Forms",
+      "Self-Defense Strategies"
+    ]
+  },
+  {
+    "name": "Daniel Johnson",
+    "image": "https://i.ibb.co/BCRPLXZ/instructor-5.jpg",
+    "email": "daniel.johnson@example.com",
+    "biography": "Daniel Johnson is a dedicated martial artist with a black belt in Shotokan Karate. He believes in the transformative power of martial arts, helping students build discipline, focus, and a strong work ethic.",
+    "skills": ["Karate", "Boxing"],
+    "message": "Martial arts is a journey that extends beyond the physical. It teaches you valuable life skills such as respect, humility, and perseverance. Embrace the path, and you'll become the best version of yourself.",
+    "experience": 9,
+    "position": "Instructor",
+    "classesTaken": 7,
+    "classes": [
+      "Karate Forms",
+      "Boxing Techniques",
+      "Speed and Agility Training"
+    ]
+  },
+  {
+    "name": "Isabella Martinez",
+    "image": "https://i.ibb.co/yVxXBvM/instructor-6.jpg",
+    "email": "isabella.martinez@example.com",
+    "biography": "Isabella Martinez is a skilled martial artist specializing in Capoeira. Her energetic and dynamic teaching style encourages students to express themselves through movement while developing strength, flexibility, and coordination.",
+    "skills": ["Capoeira", "Acrobatics"],
+    "message": "Unlock the power of movement and find your rhythm through Capoeira. Embrace the music, the culture, and the camaraderie as you immerse yourself in this beautiful martial art.",
+    "experience": 6,
+    "position": "Instructor",
+    "classesTaken": 5,
+    "classes": ["Capoeira Basics", "Acrobatic Movements", "Roda Dynamics"]
+  },
+  {
+    "name": "Alexander Kim",
+    "image": "https://i.ibb.co/Z8F6PZK/instructor-1.jpg",
+    "email": "alexander.kim@example.com",
+    "biography": "Alexander Kim is a dedicated martial artist with a black belt in Judo. He emphasizes the principles of balance, leverage, and efficiency, helping his students develop mental focus and physical strength.",
+    "skills": ["Judo", "Grappling"],
+    "message": "Martial arts is a lifelong journey of self-improvement. It teaches us not only how to overcome opponents but also how to overcome obstacles in our daily lives.",
+    "experience": 11,
+    "position": "Instructor",
+    "classesTaken": 9,
+    "classes": [
+      "Judo Fundamentals",
+      "Throws and Takedowns",
+      "Groundwork Techniques"
+    ]
+  },
+  {
+    "name": "Olivia Roberts",
+    "image": "https://i.ibb.co/Ch0nd85/instructor-2.jpg",
+    "email": "olivia.roberts@example.com",
+    "biography": "Olivia Roberts is a passionate martial artist specializing in Wing Chun. She believes that martial arts can empower individuals of all ages and abilities, helping them develop self-confidence and improve their overall well-being.",
+    "skills": ["Wing Chun", "Self-Defense"],
+    "message": "Through martial arts, you'll discover strength you never knew you had. Embrace the journey, challenge yourself, and watch your mind and body grow in ways you never thought possible.",
+    "experience": 7,
+    "position": "Instructor",
+    "classesTaken": 6,
+    "classes": ["Wing Chun Basics", "Defensive Techniques", "Chi Sao Training"]
+  },
+  {
+    "name": "Maximilian Kovalenko",
+    "image": "https://i.ibb.co/mCv7JDy/instructor-3.jpg",
+    "email": "maximilian.kovalenko@example.com",
+    "biography": "Maximilian Kovalenko is a highly skilled martial artist with a black belt in Aikido. He believes in the philosophy of blending with an opponent's energy and redirecting it, promoting harmony and non-violence.",
+    "skills": ["Aikido", "Meditation"],
+    "message": "In martial arts, we learn not only to protect ourselves but also to find peace within ourselves. Embrace the flow, cultivate inner strength, and let the power of Aikido transform your life.",
+    "experience": 13,
+    "position": "Instructor",
+    "classesTaken": 11,
+    "classes": ["Aikido Principles", "Joint Lock Techniques", "Ki Development"]
+  },
+  {
+    "name": "Emma Wilson",
+    "image": "https://i.ibb.co/99JpQFX/instructor-4.jpg",
+    "email": "emma.wilson@example.com",
+    "biography": "Emma Wilson is a dedicated martial artist proficient in Muay Thai and Kickboxing. With a focus on conditioning and technique, she helps her students build strength, improve cardiovascular fitness, and develop effective striking skills.",
+    "skills": ["Muay Thai", "Kickboxing"],
+    "message": "In martial arts, the only limits are the ones you set for yourself. Push beyond your boundaries, embrace the challenges, and discover the warrior within.",
+    "experience": 9,
+    "position": "Instructor",
+    "classesTaken": 8,
+    "classes": [
+      "Muay Thai Fundamentals",
+      "Pad Work Drills",
+      "Striking Combinations"
+    ]
+  }
+]
