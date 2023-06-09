@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "/public/logo.png";
-import { AuthContext } from "../../../providers/AuthProvider";
+import { AuthContext } from "../../../Providers/AuthProvider";
+
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -12,8 +13,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="navbar fixed z-10 bg-opacity-70 px-5 py-5 bg-[#0d1122] text-white 
-"
+      className={`navbar fixed z-10 bg-opacity-70 px-5 py-5 bg-[#0d1122] text-white`}
       >
         <div className="navbar-start">
           <div className="dropdown">
@@ -41,7 +41,7 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/">Instructors</Link>
+                <Link to="/instructor">Instructors</Link>
               </li>
               <li>
                 <Link to="/">Classes</Link>
@@ -106,7 +106,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/"
+                to="/instructor"
                 className={({ isActive }) => (isActive ? "active" : "default")}
               >
                 Instructors
