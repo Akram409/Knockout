@@ -49,7 +49,7 @@ const Navbar = () => {
               {user ? (
                 <>
                   <li>
-                    <Link to="/">Dashboard</Link>
+                    <Link to="/dashboard">Dashboard</Link>
                   </li>
                   <li>
                     <Link className="text-xl" to="/" onClick={handleLogOut}>
@@ -124,7 +124,7 @@ const Navbar = () => {
               <>
               <li>
               <NavLink
-                to="/"
+                to="/dashboard"
                 className={({ isActive }) => (isActive ? "active" : "default")}
               >
                 Dashboard
