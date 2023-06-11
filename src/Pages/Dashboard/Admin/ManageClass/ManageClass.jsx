@@ -2,7 +2,7 @@
 const ManageClass = () => {
     return (
         <div>
-            
+            manageClass
         </div>
     );
 };

@@ -1,8 +1,6 @@
-import { GrUserExpert } from "react-icons/gr";
-import { MdEventSeat, MdOutlineAttachMoney } from "react-icons/md";
 
 const InstructorCard = ({ item }) => {
-  const { name, image, experience, position,classesTaken,skills } = item;
+  const { name, image, experience, position,classesTaken } = item;
   return (
     <div className="card max-h-fit mx-3 bg-[#13182a] shadow-2xl text-center">
       <figure className="img-fluid w-full">
@@ -23,12 +21,6 @@ const InstructorCard = ({ item }) => {
             Total ClassTaken: {classesTaken}
           </span>
         </div>
-        <div>
-          <span className="text-sm ">
-            Skills: {skills[0]}
-          </span>
-        </div>
-
         <div className="card-actions justify-center pt-2">
           <button className="btn btn-primary text-white">View Details</button>
         </div>

@@ -10,7 +10,6 @@ const AllclassRow = ({ item, index }) => {
   const [isAdmin] = useAdmin();
   const [isInstructors] = useInstructors();
 
-  console.log(isAdmin , isInstructors)
   return (
     <tr className="text-center">
       <th>{index + 1}</th>

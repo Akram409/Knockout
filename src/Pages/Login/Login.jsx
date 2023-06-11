@@ -1,18 +1,12 @@
-import { useContext, useEffect, useState } from "react";
-import {
-  loadCaptchaEnginge,
-  LoadCanvasTemplate,
-  validateCaptcha,
-} from "react-simple-captcha";
-import { AuthContext } from "../../providers/AuthProvider";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
-import { toast } from "react-toastify";
 import Lottie from "lottie-react";
 import logins from "../../assets/login.json";
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -22,10 +16,6 @@ const Login = () => {
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
-
-  useEffect(() => {
-    loadCaptchaEnginge(6);
-  }, []);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -56,7 +46,7 @@ const Login = () => {
       const saveUser = {
         name: user.displayName,
         email: user.email,
-        position: "user"
+        position: "Student"
       };
       fetch("http://localhost:5000/users", {
         method: "POST",
@@ -74,15 +64,6 @@ const Login = () => {
         setError(error.message);
         console.log(error.message);
       });
-  };
-
-  const handleValidateCaptcha = (e) => {
-    const user_captcha_value = e.target.value;
-    if (validateCaptcha(user_captcha_value)) {
-      setDisabled(false);
-    } else {
-      setDisabled(true);
-    }
   };
 
   return (
@@ -177,18 +158,6 @@ const Login = () => {
                       )}
                     </div>
                   </label>
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <LoadCanvasTemplate />
-                  </label>
-                  <input
-                    onBlur={handleValidateCaptcha}
-                    type="text"
-                    name="captcha"
-                    placeholder="type the captcha above"
-                    className="input input-bordered"
-                  />
                 </div>
                 {/* TODO: make button disabled for captcha */}
                 <div className="form-control">
