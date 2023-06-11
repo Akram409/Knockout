@@ -1,20 +1,33 @@
 import { NavLink, Outlet } from "react-router-dom";
 import {
-  FaShoppingCart,
   FaWallet,
   FaCalendarAlt,
   FaHome,
-  FaUsers,
 } from "react-icons/fa";
+import { CgLogOut } from "react-icons/cg";
+import { FcHome } from "react-icons/fc";
+import { MdOutlineClass,MdOutlinePayment } from "react-icons/md";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { SiGoogleclassroom } from "react-icons/si";
+import { BsDatabaseAdd } from "react-icons/bs";
+import { BiSelectMultiple } from "react-icons/bi";
+import { AiOutlineHistory } from "react-icons/ai";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructors from "../Hooks/useInstructors";
 import useStudent from "../Hooks/useStudent";
+import { AuthContext } from "../Providers/AuthProvider";
+import { useContext } from "react";
 
 const Dashboard = () => {
+  const { logOut } = useContext(AuthContext);
   const [isAdmin] = useAdmin();
   const [isInstructors] = useInstructors();
   const [isStudent] = useStudent();
   console.log(isStudent);
+
+  const handleLogOut = () => {
+    logOut();
+  };
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -34,17 +47,17 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="/dashboard/adminHome">
-                  <FaHome></FaHome> Admin Home
+                  <FaHome size="1.5em" /> <h1 className="text-xl font-bold">Admin Home</h1>
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/manageClass">
-                  <FaHome></FaHome> Manage Class
+                  <MdOutlineClass size="1.5em"/> <h1 className="text-xl font-bold">Manage Class</h1>
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/manageUser">
-                  <FaUsers></FaUsers> Manage User
+                  <HiOutlineUserGroup size="1.5em"/> <h1 className="text-xl font-bold">Manage User</h1>
                 </NavLink>
               </li>
             </>
@@ -53,17 +66,17 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="/dashboard/myClass">
-                  <FaHome></FaHome> My Class
+                  <SiGoogleclassroom  size="1.5em"/><h1 className="text-xl font-bold">My Class</h1>
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/enrolledStudents">
-                  <FaCalendarAlt></FaCalendarAlt> Enrolled Student
+                  <FaCalendarAlt></FaCalendarAlt><h1 className="text-xl font-bold">Enrolled Student</h1>
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/addClass">
-                  <FaWallet></FaWallet> Add Class
+                  <BsDatabaseAdd size="1.5em"/> <h1 className="text-xl font-bold">Add Class</h1>
                 </NavLink>
               </li>
             </>
@@ -72,27 +85,27 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="/dashboard/studentHome">
-                  <FaHome></FaHome> Student Home
+                <FaHome size="1.5em" /><h1 className="text-xl font-bold">Student Home</h1>
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/selectedClass">
-                  <FaCalendarAlt></FaCalendarAlt> Selected Class
+                  <BiSelectMultiple size="1.5em"/> <h1 className="text-xl font-bold">Selected Class</h1>
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/enrollClass">
-                  <FaWallet></FaWallet> Enroll Class
+                  <FaWallet size="1.5em"></FaWallet> <h1 className="text-xl font-bold">Enroll Class</h1>
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/payment">
-                  <FaShoppingCart></FaShoppingCart> Payment
+                  <MdOutlinePayment size="1.5em"/> <h1 className="text-xl font-bold">Payment</h1>
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/paymentHistory">
-                  <FaShoppingCart></FaShoppingCart> Payment History
+                  <AiOutlineHistory style={{color:"whitesmoke"}} size="1.5em"/> <h1 className="text-xl font-bold">Payment History</h1>
                 </NavLink>
               </li>
             </>
@@ -103,16 +116,19 @@ const Dashboard = () => {
 }"
           ></div>
 
-            <div className="absolute bottom-10">
+          <div className="absolute bottom-10">
             <li>
               <NavLink to="/">
-                <FaHome></FaHome> Home
+                <FcHome size="1.5em"/> <h1 className="text-xl font-bold">Home</h1>
               </NavLink>
             </li>
             <li>
-              <NavLink to="/">Logout</NavLink>
+              <NavLink to="/" onClick={handleLogOut}>
+                <CgLogOut size="1.5em"/>
+                <h1 className="text-xl font-bold">Logout</h1>
+              </NavLink>
             </li>
-            </div>
+          </div>
         </ul>
       </div>
     </div>

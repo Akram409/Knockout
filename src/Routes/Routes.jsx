@@ -16,6 +16,7 @@ import MyClass from "../Pages/Dashboard/Instructor/MyClass/MyClass";
 import EnrolledStudents from "../Pages/Dashboard/Instructor/EnrolledStudent/EnrolledStudents";
 import AddClass from "../Pages/Dashboard/Instructor/AddClass/AddClass";
 import PaymentHistory from "../Pages/Dashboard/Student/PaymentHistory/PaymentHistory";
+import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
 
 export const router = createBrowserRouter([
     {
@@ -85,7 +86,7 @@ export const router = createBrowserRouter([
         // Admin Routes
         {
           path: 'adminHome',
-          element: <ManageClass></ManageClass>
+          element: <AdminHome></AdminHome>
         },
         {
           path: 'manageClass',
