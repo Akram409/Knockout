@@ -9,7 +9,7 @@ const ManageClass = () => {
         <div className="overflow-x-auto w-full">
           <table className="table table-zebra w-full">
             <thead>
-              <tr className="text-center">
+              <tr className="text-center font-bold text-black text-sm">
                 <th>SL.</th>
                 <th>Picture</th>
                 <th>ClassName</th>
