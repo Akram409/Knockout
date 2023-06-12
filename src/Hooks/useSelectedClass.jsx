@@ -3,7 +3,7 @@ import useAxiosSecure from "./useAxiosSecure";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 
-const useAdmin = () => {
+const useSelectedClass = () => {
     const {user} = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure();
     const {data: selectedClass, isLoading: Loading} = useQuery({
@@ -15,4 +15,4 @@ const useAdmin = () => {
     })
     return [selectedClass, Loading]
 }
-export default useAdmin;
+export default useSelectedClass;

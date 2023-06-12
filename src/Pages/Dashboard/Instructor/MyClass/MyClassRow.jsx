@@ -10,8 +10,6 @@ const MyClassRow = ({ item, index, refetch }) => {
   const {
     register,
     handleSubmit,
-    reset,
-    formState: { errors },
   } = useForm();
 
   const [axiosSecure] = useAxiosSecure();

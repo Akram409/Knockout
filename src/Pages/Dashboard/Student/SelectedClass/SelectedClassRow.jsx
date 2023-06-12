@@ -1,4 +1,9 @@
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
+
 const SelectedClassRow = ({ item, index, refetch }) => {
+    const [axiosSecure] = useAxiosSecure();
   const {
     _id,
     name,
@@ -13,8 +18,33 @@ const SelectedClassRow = ({ item, index, refetch }) => {
   const handlePay = () => {
     console.log(_id)
   };
-  const handleDelete = () => {
-    console.log(_id)
+
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/student/selectedClass/delete/${_id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "Your Information has been deleted.",
+                "success"
+              );
+            }
+            refetch()
+          });
+      }
+    });
   };
 
   
@@ -37,12 +67,11 @@ const SelectedClassRow = ({ item, index, refetch }) => {
       <td>${price}</td>
       <td>
         <div className="flex flex-col gap-y-3">
-          <button
-            onClick={handlePay}
+          <Link to="/payment"><button
             className="btn btn-outline btn-success text-white w-full font-bold"
           >
             PAY
-          </button>
+          </button></Link>
 
           <button
             onClick={handleDelete}

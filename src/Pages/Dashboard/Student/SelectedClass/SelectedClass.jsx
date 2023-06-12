@@ -1,14 +1,14 @@
-// import useSelectedClass from "../../../../Hooks/useSelectedClass";
-
-import SelectedClassRow from "./SelectedClassRow";
+import useSelectedClass from "../../../../Hooks/useSelectedClass";
+import { Helmet } from "react-helmet-async";
+// import SelectedClassRow from "./SelectedClassRow";
 
 const SelectedClass = () => {
-    // const [selectedClass] = useSelectedClass()
-    // console.log(selectedClass)
+    const [selectedClass] = useSelectedClass()
+    console.log(selectedClass)
     return (
         <>
         <Helmet>
-          <title>ManageClass | KnockOut</title>
+          <title>Selecte Class | KnockOut</title>
         </Helmet>
           <div className="container mx-auto">
           <div className="overflow-x-auto w-full">
