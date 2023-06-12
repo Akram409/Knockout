@@ -3,7 +3,7 @@ import useManageClass from "../../../../Hooks/useManageClass";
 import ManageClassRow from "./ManageClassRow";
 
 const ManageClass = () => {
-    const [manageClasses] = useManageClass()
+  const [manageClasses,,refetch] = useManageClass()
     return (
         <div className="container mx-auto">
         <div className="overflow-x-auto w-full">
@@ -22,7 +22,7 @@ const ManageClass = () => {
             </thead>
             <tbody>
               {manageClasses.map((item, idx) => (
-                <ManageClassRow key={item._id} item={item} index={idx}></ManageClassRow>
+                <ManageClassRow key={item._id} item={item} refetch={refetch} index={idx}></ManageClassRow>
               ))}
             </tbody>
           </table>
