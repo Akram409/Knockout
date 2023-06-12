@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import useEnrollClass from "../../../../Hooks/useEnrollClass";
 
 const EnrollClass = () => {
-    const [enrollClasses] = useEnrollClass()
+    const [enrollClasses,,refetch] = useEnrollClass()
     console.log(enrollClasses)
     return (
         <>

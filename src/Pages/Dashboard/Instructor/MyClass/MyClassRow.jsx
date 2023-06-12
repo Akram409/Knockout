@@ -185,7 +185,7 @@ const MyClassRow = ({ item, index, refetch }) => {
                 </div>
                 <input
                   className="btn btn-primary font-bold text-white"
-                  type="submit"
+                  type="modal-action"
                   value="Update Class"
                 />
               </form>

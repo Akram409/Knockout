@@ -8,7 +8,7 @@ const useEnrollClass = () => {
         queryKey: ['enrollClass'],
         queryFn: async() => {
             const res = await fetch(`http://localhost:5000/student/enrollClass/${user?.email}`);
-            return res.data
+            return res.json()
         }
     })
 
