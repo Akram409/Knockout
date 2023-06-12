@@ -3,6 +3,7 @@ import InstructorRow from "./InstructorRow";
 
 const Instructor = () => {
     const [instructors] = useInstructor()
+    console.log(instructors)
   return (
     <div className="container mx-auto pt-28">
       <div className="overflow-x-auto w-full">
@@ -14,7 +15,6 @@ const Instructor = () => {
               <th>Instructor</th>
               <th>Email</th>
               <th>ClassTaken</th>
-              <th>ClassName</th>
               <th>Details</th>
             </tr>
           </thead>

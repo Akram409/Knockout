@@ -1,14 +1,14 @@
 import useSelectedClass from "../../../../Hooks/useSelectedClass";
 import { Helmet } from "react-helmet-async";
-// import SelectedClassRow from "./SelectedClassRow";
+import SelectedClassRow from "./SelectedClassRow";
 
 const SelectedClass = () => {
-    const [selectedClass] = useSelectedClass()
+    const [selectedClass,,refetch] = useSelectedClass()
     console.log(selectedClass)
     return (
         <>
         <Helmet>
-          <title>Selecte Class | KnockOut</title>
+          <title>Selected Class | KnockOut</title>
         </Helmet>
           <div className="container mx-auto">
           <div className="overflow-x-auto w-full">
@@ -26,9 +26,9 @@ const SelectedClass = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* {selectedClass.map((item, idx) => (
+                {selectedClass?.map((item, idx) => (
                   <SelectedClassRow key={item._id} item={item} refetch={refetch} index={idx}></SelectedClassRow>
-                ))} */}
+                ))}
               </tbody>
             </table>
           </div>

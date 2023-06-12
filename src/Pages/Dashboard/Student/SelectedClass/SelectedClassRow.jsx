@@ -14,7 +14,7 @@ const SelectedClassRow = ({ item, index, refetch }) => {
     price,
     enrolled,
   } = item;
-
+  console.log(_id)
 
   const handleDelete = () => {
     Swal.fire({
@@ -27,18 +27,12 @@ const SelectedClassRow = ({ item, index, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure.delete(`/student/selectedClass/delete/${_id}`)
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.deletedCount > 0) {
-              Swal.fire(
-                "Deleted!",
-                "Your Information has been deleted.",
-                "success"
-              );
+        axiosSecure.delete(`/student/selectedClass/delete/${_id}`).then((res) => {
+            console.log(res)
+            if (res.data.deletedCount > 0) {
+              refetch();
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
             }
-            refetch()
           });
       }
     });

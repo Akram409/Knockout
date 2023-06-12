@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const InstructorRow = ({ item, index }) => {
     // const { name, image,email,biography, experience,skills,message, position,classesTaken } = item;
-    const { name, image,email,classesTaken ,classes } = item;
+    const { name, image,email,classesTaken  } = item;
     return (
         <tr className="text-center">
       <th>{index + 1}</th>
@@ -18,7 +18,6 @@ const InstructorRow = ({ item, index }) => {
       <td>{name}</td>
       <td>{email}</td>
       <td>{classesTaken}</td>
-      <td>{classes[0]}</td>
       <td>
         <Link to="/"><button className="btn btn-warning text-black">See Classes</button></Link>
       </td>

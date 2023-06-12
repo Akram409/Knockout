@@ -86,7 +86,7 @@ const MyClassRow = ({ item, index, refetch }) => {
           Update
         </button>
         <dialog id="my_modal_4" className="modal">
-          <form method="dialog" className="modal-box w-11/12 max-w-5xl">
+          <div className="modal-box w-11/12 max-w-5xl">
             <h3 className="font-bold text-lg">Update</h3>
             <div className="w-full">
               <form onSubmit={handleSubmit(onSubmit)} >
@@ -193,7 +193,7 @@ const MyClassRow = ({ item, index, refetch }) => {
             <div className="modal-action">
               <button className="btn">Close</button>
             </div>
-          </form>
+          </div>
         </dialog>
       </td>
     </tr>

@@ -16,6 +16,7 @@ const AllclassRow = ({ item, index , refetch }) => {
   const handleSelect = (data) => {
     data.student_name = user?.displayName
     data.student_email = user?.email
+   
     axiosSecure.post("/selectedClass", data).then((data) => {     
       console.log(data)
       if (data.data.insertedId) {
