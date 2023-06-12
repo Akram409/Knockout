@@ -17,6 +17,7 @@ import AddClass from "../Pages/Dashboard/Instructor/AddClass/AddClass";
 import PaymentHistory from "../Pages/Dashboard/Student/PaymentHistory/PaymentHistory";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
 import UpdateClass from "../Pages/Dashboard/Instructor/MyClass/UpdateClass";
+import Footer from "../Pages/Shared/Footer/Footer";
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
         {
           path: '/allClass',
           element: <Allclass />
+        },
+        {
+          path: '/footer',
+          element: <Footer />
         },
       ]
     },

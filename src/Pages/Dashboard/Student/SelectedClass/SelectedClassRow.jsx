@@ -15,11 +15,8 @@ const SelectedClassRow = ({ item, index, refetch }) => {
     enrolled,
   } = item;
 
-  const handlePay = () => {
-    console.log(_id)
-  };
 
-  const handleDelete = (_id) => {
+  const handleDelete = () => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
