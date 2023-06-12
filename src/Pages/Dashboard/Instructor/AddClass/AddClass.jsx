@@ -17,7 +17,7 @@ const AddClass = () => {
   return (
     <>
       <Helmet>
-        <title>KnockOut | AddClass</title>
+        <title>AddClass | KnockOut</title>
       </Helmet>
       <div className="w-full">
         <form onSubmit={handleSubmit(onSubmit)} className="card-body">

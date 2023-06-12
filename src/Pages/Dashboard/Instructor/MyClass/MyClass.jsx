@@ -4,7 +4,7 @@ const MyClass = () => {
   return (
     <div>
       <Helmet>
-        <title>KnockOut | MyClass</title>
+        <title>MyClass | KnockOut</title>
       </Helmet>
     </div>
   );

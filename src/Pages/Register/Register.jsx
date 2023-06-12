@@ -89,7 +89,7 @@ const Register = () => {
   return (
     <>
       <Helmet>
-        <title>KnockOut | Register</title>
+        <title>Register | KnockOut</title>
       </Helmet>
 
       <div className="hero min-h-screen bg-[url('/public/Sprinkle.svg')]">

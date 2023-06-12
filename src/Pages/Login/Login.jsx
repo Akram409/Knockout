@@ -69,7 +69,7 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title>KnockOut | Login</title>
+        <title>Login | KnockOut</title>
       </Helmet>
       <div className="hero min-h-screen bg-[url('/public/Sprinkle.svg')]">
         <div className="hero-content flex-col md:flex-row">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import useAlluser from "../../../../Hooks/useAlluser";
 import ManageUserRow from "./ManageUserRow";
 
@@ -5,6 +6,10 @@ const ManageUser = () => {
     const [user] = useAlluser()
     console.log(user)
     return (
+      <>
+        <Helmet>
+        <title>ManageUser | KnockOut</title>
+      </Helmet>
         <div className="container mx-auto ">
         <div className="overflow-x-auto w-full">
           <table className="table table-zebra w-full">
@@ -26,6 +31,7 @@ const ManageUser = () => {
           </table>
         </div>
       </div>
+      </>
     );
 };
 

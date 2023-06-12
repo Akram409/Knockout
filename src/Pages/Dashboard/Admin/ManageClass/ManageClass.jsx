@@ -5,7 +5,7 @@ import ManageClassRow from "./ManageClassRow";
 const ManageClass = () => {
     const [manageClasses] = useManageClass()
     return (
-        <div className="container mx-auto ">
+        <div className="container mx-auto">
         <div className="overflow-x-auto w-full">
           <table className="table table-zebra w-full">
             <thead>
