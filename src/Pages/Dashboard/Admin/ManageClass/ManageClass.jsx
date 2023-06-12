@@ -1,10 +1,15 @@
 
+import { Helmet } from "react-helmet-async";
 import useManageClass from "../../../../Hooks/useManageClass";
 import ManageClassRow from "./ManageClassRow";
 
 const ManageClass = () => {
   const [manageClasses,,refetch] = useManageClass()
     return (
+      <>
+      <Helmet>
+        <title>ManageClass | KnockOut</title>
+      </Helmet>
         <div className="container mx-auto">
         <div className="overflow-x-auto w-full">
           <table className="table table-zebra w-full">
@@ -28,6 +33,7 @@ const ManageClass = () => {
           </table>
         </div>
       </div>
+      </>
     );
 };
 

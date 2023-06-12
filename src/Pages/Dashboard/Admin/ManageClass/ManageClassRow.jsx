@@ -29,7 +29,7 @@ const ManageClassRow = ({ item, index, refetch }) => {
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = () => {
     fetch(`http://localhost:5000/manageClass/feedback/${_id}`, {
     method: "PATCH",
     headers: {
@@ -40,7 +40,7 @@ const ManageClassRow = ({ item, index, refetch }) => {
     .then((res) => res.json())
     .then((data) => {
       if (data.modifiedCount) {
-        setFeedback(""); // Reset the feedback value after successful submission
+        setFeedback("");
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -88,7 +88,7 @@ const ManageClassRow = ({ item, index, refetch }) => {
           setdeniedClick(true);
           Swal.fire({
             position: "top-end",
-            icon: "warning",
+            icon: "error",
             title: `${name} is Denied!`,
             showConfirmButton: false,
             timer: 1500,
@@ -120,7 +120,7 @@ const ManageClassRow = ({ item, index, refetch }) => {
           <button
             onClick={handleApprove}
             className="btn btn-outline btn-success text-white w-full font-bold"
-            disabled={approveClick}
+            disabled={approveClick || deniedClick}
           >
             Approved
           </button>
@@ -128,7 +128,7 @@ const ManageClassRow = ({ item, index, refetch }) => {
           <button
             onClick={handleDenied}
             className="btn btn-outline btn-error text-white w-full"
-            disabled={deniedClick}
+            disabled={approveClick || deniedClick}
           >
             Denied
           </button>

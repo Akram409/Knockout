@@ -2,11 +2,12 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import { useContext } from "react";
+import { AuthContext } from "../../../../Providers/AuthProvider";
 
-const Image_Hosting_Token = import.meta.env.VITE_Image_Upload_Token
+const Image_Hosting_Token = import.meta.env.VITE_Image_Upload_Token;
 const AddClass = () => {
-  const [axiosSecure] = useAxiosSecure();
-  const img_hosting_url = `https://api.imgbb.com/1/upload?key=${Image_Hosting_Token}`
+  const { user } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -14,38 +15,52 @@ const AddClass = () => {
     formState: { errors },
   } = useForm();
 
+  const [axiosSecure] = useAxiosSecure();
+  const img_hosting_url = `https://api.imgbb.com/1/upload?key=${Image_Hosting_Token}`;
 
   const onSubmit = (data) => {
+    console.log(data)
+    data.instructorName = user?.displayName
+    data.instructorEmail = user?.email
     const formData = new FormData();
-    formData.append('image', data.image[0])
+    formData.append("image", data.image[0]);
     fetch(img_hosting_url, {
-      method: 'POST',
-      body: formData
-  })
-  .then(res => res.json())
-  .then(imgResponse => {
-      if(imgResponse.success){
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgResponse) => {
+        if (imgResponse.success) {
           const imgURL = imgResponse.data.display_url;
-          const {name,instructorName,instructorEmail,totalSeats, price} = data;
-          console.log(data)
-          const newItem = {name, instructorName,instructorEmail,totalSeats: parseFloat(totalSeats), price: parseFloat(price), image:imgURL , status:"pending",enrolled:parseFloat(0)}
-          console.log(newItem)
-          axiosSecure.post('/addClass', newItem)
-          .then(data => {
-              console.log('after posting new menu item', data.data)
-              if(data.data.insertedId){
-                  reset();
-                  Swal.fire({
-                      position: 'top-end',
-                      icon: 'success',
-                      title: 'Item added successfully',
-                      showConfirmButton: false,
-                      timer: 1500
-                    })
-              }
-          })
-      }
-  })
+          const { name, instructorName, instructorEmail, totalSeats, price } =
+            data;
+          const newItem = {
+            name,
+            instructorName,
+            instructorEmail,
+            totalSeats: parseFloat(totalSeats),
+            price: parseInt(price),
+            image: imgURL,
+            status: "pending",
+            enrolled: parseFloat(0),
+            feedback: ""
+          };
+          console.log(newItem);
+          axiosSecure.post("/addClass", newItem).then((data) => {
+            console.log("after posting new menu item", data.data);
+            if (data.data.insertedId) {
+              reset();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Class added successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+          });
+        }
+      });
   };
   return (
     <>
@@ -76,16 +91,12 @@ const AddClass = () => {
               </label>
               <input
                 type="text"
-                {...register("instructorName", { required: true })}
                 name="instructorName"
+                defaultValue={user?.displayName}
                 placeholder="Instructor Name"
-                className="input input-bordered"
+                className="input input-bordered font-light"
+                disabled="disabled"
               />
-              {errors.name && (
-                <span className="text-red-600">
-                  Instructor Name is required
-                </span>
-              )}
             </div>
           </div>
 
@@ -96,14 +107,12 @@ const AddClass = () => {
               </label>
               <input
                 type="text"
-                {...register("instructorEmail", { required: true })}
                 name="instructorEmail"
                 placeholder="Instructor Email"
-                className="input input-bordered"
+                className="input input-bordered font-light"
+                defaultValue={user?.email}
+                disabled="disabled"
               />
-              {errors.name && (
-                <span className="text-red-600">Email is required</span>
-              )}
             </div>
             <div className="form-control w-full">
               <label className="label">
@@ -146,7 +155,7 @@ const AddClass = () => {
               </label>
               <input
                 type="file"
-                {...register("image", { required: false })}
+                {...register("image", { required: true })}
                 name="image"
                 className="file-input file-input-bordered file-input-primary w-full max-w-xs"
               />
@@ -156,13 +165,12 @@ const AddClass = () => {
             </div>
           </div>
 
-          <div className="form-control mt-6">
-            <input
-              className="btn btn-primary font-bold text-white"
-              type="submit"
-              value="Add Class"
-            />
-          </div>
+
+          <input
+            className="btn btn-primary font-bold text-white"
+            type="submit"
+            value="Add Class"
+          />
         </form>
       </div>
     </>
