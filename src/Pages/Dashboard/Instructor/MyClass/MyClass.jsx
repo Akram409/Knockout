@@ -26,9 +26,9 @@ const MyClass = () => {
               </tr>
             </thead>
             <tbody>
-              {/* {Instructor?.map((item, idx) => (
+              {Instructors?.map((item, idx) => (
                 <MyClassRow key={item._id} item={item} refetch={refetch} index={idx}></MyClassRow>
-              ))} */}
+              ))}
             </tbody>
           </table>
         </div>

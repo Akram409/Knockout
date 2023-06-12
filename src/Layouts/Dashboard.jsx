@@ -1,7 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import {
   FaWallet,
-  FaCalendarAlt,
   FaHome,
 } from "react-icons/fa";
 import { CgLogOut } from "react-icons/cg";
@@ -66,11 +65,6 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/myClass">
                   <SiGoogleclassroom  size="1.5em"/><h1 className="text-xl font-bold">My Class</h1>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/enrolledStudents">
-                  <FaCalendarAlt></FaCalendarAlt><h1 className="text-xl font-bold">Enrolled Student</h1>
                 </NavLink>
               </li>
               <li>

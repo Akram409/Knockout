@@ -1,15 +1,46 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+
 import { AuthContext } from "../../Providers/AuthProvider";
 import useAdmin from "../../Hooks/useAdmin";
 import useInstructors from "../../Hooks/useInstructors";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
-const AllclassRow = ({ item, index }) => {
+const AllclassRow = ({ item, index , refetch }) => {
+  const [axiosSecure] = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const { name, image, instructorName, totalSeats, price } = item;
   const [isAdmin] = useAdmin();
   const [isInstructors] = useInstructors();
 
+  const handleSelect = (data) => {
+    data.student_name = user?.displayName
+    data.student_email = user?.email
+    axiosSecure.post("/selectedClass", data).then((data) => {     
+      console.log(data)
+      if (data.data.insertedId) {
+      refetch()
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Class Selected successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+      else
+      {
+        Swal.fire({
+          position: "top-end",
+          icon: "warning",
+          title: "Class already selected",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
+    
+  };
   return (
     <tr className="text-center">
       <th>{index + 1}</th>
@@ -33,9 +64,12 @@ const AllclassRow = ({ item, index }) => {
               Select
             </button>
           ) : (
-            <Link to="/">
-              <button className="btn btn-primary text-white">Select</button>
-            </Link>
+            <button
+              onClick={() => handleSelect(item)}
+              className="btn btn-primary text-white"
+            >
+              Select
+            </button>
           )
         ) : (
           <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed">

@@ -13,10 +13,10 @@ import SelectedClass from "../Pages/Dashboard/Student/SelectedClass/SelectedClas
 import EnrollClass from "../Pages/Dashboard/Student/EnrollClass/EnrollClass";
 import Payment from "../Pages/Dashboard/Student/Payment/Payment";
 import MyClass from "../Pages/Dashboard/Instructor/MyClass/MyClass";
-import EnrolledStudents from "../Pages/Dashboard/Instructor/EnrolledStudent/EnrolledStudents";
 import AddClass from "../Pages/Dashboard/Instructor/AddClass/AddClass";
 import PaymentHistory from "../Pages/Dashboard/Student/PaymentHistory/PaymentHistory";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
+import UpdateClass from "../Pages/Dashboard/Instructor/MyClass/UpdateClass";
 
 export const router = createBrowserRouter([
     {
@@ -76,8 +76,8 @@ export const router = createBrowserRouter([
           element: <MyClass></MyClass>
         },
         {
-          path: 'enrolledStudents',
-          element: <EnrolledStudents></EnrolledStudents>
+          path: 'updateClass',
+          element: <UpdateClass></UpdateClass>,
         },
         {
           path: 'addClass',

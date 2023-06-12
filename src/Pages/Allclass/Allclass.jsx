@@ -2,7 +2,7 @@ import useAllclass from "../../Hooks/useAllclass";
 import AllclassRow from "./AllclassRow";
 
 const Allclass = () => {
-    const [allClasses] = useAllclass()
+    const [allClasses,,refetch] = useAllclass()
     return (
         <div className="container mx-auto pt-28">
         <div className="overflow-x-auto w-full">
@@ -20,7 +20,7 @@ const Allclass = () => {
             </thead>
             <tbody>
               {allClasses.map((item, idx) => (
-                <AllclassRow key={item._id} item={item} index={idx}></AllclassRow>
+                <AllclassRow key={item._id} item={item} refetch={refetch} index={idx}></AllclassRow>
               ))}
             </tbody>
           </table>
