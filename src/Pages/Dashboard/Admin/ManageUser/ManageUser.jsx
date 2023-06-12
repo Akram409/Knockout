@@ -3,7 +3,7 @@ import useAlluser from "../../../../Hooks/useAlluser";
 import ManageUserRow from "./ManageUserRow";
 
 const ManageUser = () => {
-    const [user] = useAlluser()
+    const [user,,refetch] = useAlluser()
     console.log(user)
     return (
       <>
@@ -25,7 +25,7 @@ const ManageUser = () => {
             </thead>
             <tbody>
               {user.map((item, idx) => (
-                <ManageUserRow key={item._id} item={item} index={idx}></ManageUserRow>
+                <ManageUserRow key={item._id} item={item} refetch={refetch} index={idx}></ManageUserRow>
               ))}
             </tbody>
           </table>

@@ -1,18 +1,51 @@
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 
+const Image_Hosting_Token = import.meta.env.VITE_Image_Upload_Token
 const AddClass = () => {
+  const [axiosSecure] = useAxiosSecure();
+  const img_hosting_url = `https://api.imgbb.com/1/upload?key=${Image_Hosting_Token}`
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
-  // Image,instructorname+email,availavle GiSeaTurtle,price,add button,status = pending
+
+
   const onSubmit = (data) => {
-    data.status = 'pending'
-    data.enrolled = 0
-    console.log(data);
+    const formData = new FormData();
+    formData.append('image', data.image[0])
+    fetch(img_hosting_url, {
+      method: 'POST',
+      body: formData
+  })
+  .then(res => res.json())
+  .then(imgResponse => {
+      if(imgResponse.success){
+          const imgURL = imgResponse.data.display_url;
+          const {name,instructorName,instructorEmail,totalSeats, price} = data;
+          console.log(data)
+          const newItem = {name, instructorName,instructorEmail,totalSeats: parseFloat(totalSeats), price: parseFloat(price), image:imgURL , status:"pending",enrolled:parseFloat(0)}
+          console.log(newItem)
+          axiosSecure.post('/addClass', newItem)
+          .then(data => {
+              console.log('after posting new menu item', data.data)
+              if(data.data.insertedId){
+                  reset();
+                  Swal.fire({
+                      position: 'top-end',
+                      icon: 'success',
+                      title: 'Item added successfully',
+                      showConfirmButton: false,
+                      timer: 1500
+                    })
+              }
+          })
+      }
+  })
   };
   return (
     <>

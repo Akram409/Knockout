@@ -1,17 +1,19 @@
+import { useState } from "react";
 import Swal from "sweetalert2";
-import useAlluser from "../../../../Hooks/useAlluser";
 
-const ManageUserRow = ({ item, index }) => {
-  const [refetch] = useAlluser()
-
+const ManageUserRow = ({ item, index ,refetch}) => {
   const { _id, name, image, email, position } = item;
-  console.log(position)
+  const [adminClick,setadminClick] = useState(position === 'Admin')
+  const [instructorClick,setInstructorClick] = useState(position === 'Instructor')
+  console.log(item)
   const handleAdminRole = () => {
     fetch(`http://localhost:5000/userRole/admin/${_id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
       .then((data) => {
+        setadminClick(true)
+        setInstructorClick(false)
         console.log(data);
         if (data.modifiedCount) {
           Swal.fire({
@@ -25,13 +27,14 @@ const ManageUserRow = ({ item, index }) => {
         }
       });
   };
-  const handleInstructorRole = () => {
+const handleInstructorRole = () => {
     fetch(`http://localhost:5000/userRole/instructor/${_id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        setadminClick(false)
+        setInstructorClick(true)
         if (data.modifiedCount) {
           Swal.fire({
             position: "top-end",
@@ -64,12 +67,14 @@ const ManageUserRow = ({ item, index }) => {
           <button
             onClick={handleAdminRole}
             className="btn btn-outline btn-success text-white w-full font-bold"
+            disabled={adminClick}
           >
             Admin
           </button>
           <button
             onClick={handleInstructorRole}
             className="btn btn-outline btn-warning text-white w-full"
+            disabled={instructorClick}
           >
             Instructor
           </button>

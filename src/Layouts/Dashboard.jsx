@@ -23,7 +23,6 @@ const Dashboard = () => {
   const [isAdmin] = useAdmin();
   const [isInstructors] = useInstructors();
   const [isStudent] = useStudent();
-  console.log(isStudent);
 
   const handleLogOut = () => {
     logOut();
