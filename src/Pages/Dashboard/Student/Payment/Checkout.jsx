@@ -79,14 +79,14 @@ const Checkout = ({ filter, price, id }) => {
         ClassName: filter.name,
         ClassId: id,
       };
-    fetch(`https://summer-camp-school-server-dusky.vercel.app/selectedClass/approve/student/${id}`, {
+    fetch(`http://localhost:5000/selectedClass/approve/student/${id}`, {
         method: "PATCH",
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
         });
-    fetch(`https://summer-camp-school-server-dusky.vercel.app/allClass/${id}`, {
+    fetch(`http://localhost:5000/allClass/${id}`, {
         method: "PATCH",
       })
         .then((res) => res.json())

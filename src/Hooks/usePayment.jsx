@@ -3,11 +3,12 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const usePayment = () => {
-    const {user} = useContext(AuthContext); 
+    const {user,loading} = useContext(AuthContext); 
     const {data: payment = [], isLoading: paymentloading, refetch} = useQuery({
         queryKey: ['payments'],
+        enabled: !loading && !!localStorage.getItem("access-token"),
         queryFn: async() => {
-            const res = await fetch(`https://summer-camp-school-server-dusky.vercel.app/payment/${user?.email}`);
+            const res = await fetch(`http://localhost:5000/payment/${user?.email}`);
             return res.json()
         }
     })

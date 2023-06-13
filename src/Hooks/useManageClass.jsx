@@ -1,15 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
+import { AuthContext } from "../Providers/AuthProvider";
+import { useContext } from "react";
 
 const useManageClass = () => {
-    const {data: manageClasses = [], isLoading: loading, refetch} = useQuery({
+    const {loading} = useContext(AuthContext);
+    const {data: manageClasses = [], isLoading: loadings, refetch} = useQuery({
         queryKey: ['manageClass'],
+        enabled: !loading && !!localStorage.getItem("access-token"),
         queryFn: async() => {
-            const res = await fetch('https://summer-camp-school-server-dusky.vercel.app/manageClass');
+            const res = await fetch('http://localhost:5000/manageClass');
             return res.json();
         }
     })
 
-    return [manageClasses, loading, refetch]
+    return [manageClasses, loadings, refetch]
 };
 
 export default useManageClass;

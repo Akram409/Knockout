@@ -3,16 +3,17 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const useEnrollClass = () => {
-    const {user} = useContext(AuthContext); 
-    const {data: enrollClasses = [], isLoading: loading, refetch} = useQuery({
+    const {user,loading} = useContext(AuthContext); 
+    const {data: enrollClasses = [], isLoading: loadings, refetch} = useQuery({
         queryKey: ['enrollClass'],
+        enabled: !loading && !!localStorage.getItem("access-token"),
         queryFn: async() => {
-            const res = await fetch(`https://summer-camp-school-server-dusky.vercel.app/student/enrollClass/${user?.email}`);
+            const res = await fetch(`http://localhost:5000/student/enrollClass/${user?.email}`);
             return res.json()
         }
     })
 
-    return [enrollClasses, loading, refetch]
+    return [enrollClasses, loadings, refetch]
 };
 
 export default useEnrollClass;

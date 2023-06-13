@@ -1,15 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
+import { AuthContext } from "../Providers/AuthProvider";
+import { useContext } from "react";
 
 const useAllclass = () => {
-    const {data: allClasses = [], isLoading: loading, refetch} = useQuery({
+    const {loading} = useContext(AuthContext);
+    const {data: allClasses = [], isLoading: loadings, refetch} = useQuery({
         queryKey: ['allClass'],
+        enabled:  !loading && !!localStorage.getItem("access-token"),
         queryFn: async() => {
-            const res = await fetch('https://summer-camp-school-server-dusky.vercel.app/allClass');
+            const res = await fetch('http://localhost:5000/allClass');
             return res.json();
         }
     })
 
-    return [allClasses, loading, refetch]
+    return [allClasses, loadings, refetch]
 };
 
 export default useAllclass;

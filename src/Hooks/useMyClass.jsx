@@ -12,7 +12,7 @@ const useMyClass = () => {
     refetch,
   } = useQuery({
     queryKey: ["Instructor"],
-    enabled: !loading,
+    enabled: !loading && !!localStorage.getItem("access-token"),
     queryFn: async () => {
       const res = await axiosSecure.get(`/myClass/instructor/${user?.email}`);
       return res.data;

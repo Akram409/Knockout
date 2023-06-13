@@ -16,3 +16,7 @@ Live Link : [KnockOut](https://knockout-firebase.web.app/).
 - Setup the Google,Email and Password login method in the login and register Component.
 - Setup JWT and password Validation in the Register component.
 - For this project we use html,css,reactJs,nodejs,mongoDB,firebase,javascript,tailwind etc
+
+## Admin: admin@gmail.com | AKRAMakram12345#
+## Instructor: hulk@gmail.com | HULKhulk123!@#
+## User: student@gmail.com | STUDENTstudent12!@
