@@ -6,21 +6,25 @@ import useInstructors from "../../Hooks/useInstructors";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
-const AllclassRow = ({ item, index , refetch }) => {
+const AllclassRow = ({ item, index, refetch }) => {
   const [axiosSecure] = useAxiosSecure();
   const { user } = useContext(AuthContext);
-  const {_id, name, image, instructorName, totalSeats, price } = item;
+  const { _id, name, image, instructorName, totalSeats, enrolled, price } =
+    item;
   const [isAdmin] = useAdmin();
   const [isInstructors] = useInstructors();
 
+  const isClassFull = enrolled >= totalSeats;
+  const rowClassName = isClassFull ? "bg-red-500 text-white" : "";
+
   const handleSelect = (data) => {
-    data.student_name = user?.displayName
-    data.student_email = user?.email
-    data.ClassId = _id
-    axiosSecure.post("/selectedClass", data).then((data) => {     
-      console.log(data)
+    data.student_name = user?.displayName;
+    data.student_email = user?.email;
+    data.ClassId = _id;
+    axiosSecure.post("/selectedClass", data).then((data) => {
+      console.log(data);
       if (data.data.insertedId) {
-      refetch()
+        refetch();
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -28,9 +32,7 @@ const AllclassRow = ({ item, index , refetch }) => {
           showConfirmButton: false,
           timer: 1500,
         });
-      }
-      else
-      {
+      } else {
         Swal.fire({
           position: "top-end",
           icon: "warning",
@@ -40,10 +42,9 @@ const AllclassRow = ({ item, index , refetch }) => {
         });
       }
     });
-    
   };
   return (
-    <tr className="text-center">
+    <tr className={`text-center ${rowClassName}`}>
       <th>{index + 1}</th>
       <td>
         <div className="flex justify-center items-center">
@@ -56,7 +57,7 @@ const AllclassRow = ({ item, index , refetch }) => {
       </td>
       <td>{name}</td>
       <td>{instructorName}</td>
-      <td>{totalSeats}</td>
+      <td>{totalSeats-enrolled}</td>
       <td>${price}</td>
       <td>
         {user ? (
@@ -67,9 +68,12 @@ const AllclassRow = ({ item, index , refetch }) => {
           ) : (
             <button
               onClick={() => handleSelect(item)}
-              className="btn btn-primary text-white"
+              className={`btn btn-primary text-white ${
+                isClassFull ? "cursor-not-allowed opacity-50 text-white" : ""
+              }`}
+              disabled={isClassFull}
             >
-              Select
+              {isClassFull ? "Class Full" : "Select"}
             </button>
           )
         ) : (

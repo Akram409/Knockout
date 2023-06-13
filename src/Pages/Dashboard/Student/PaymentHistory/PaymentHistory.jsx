@@ -5,12 +5,12 @@ import usePayment from "../../../../Hooks/usePayment";
 
 const PaymentHistory = () => {
     const [payment,paymentloading,refetch] = usePayment()
-    console.log(payment)
     return (
         <>
         <Helmet>
           <title>Payment History | KnockOut</title>
         </Helmet>
+        <h2 className="text-3xl text-center font-bold mb-5">Payment History</h2>
           <div className="container mx-auto">
           <div className="overflow-x-auto w-full">
             <table className="table table-zebra w-full">

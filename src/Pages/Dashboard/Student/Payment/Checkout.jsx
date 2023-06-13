@@ -86,9 +86,16 @@ const Checkout = ({ filter, price, id }) => {
         .then((data) => {
           console.log(data);
         });
+    fetch(`http://localhost:5000/allClass/${id}`, {
+        method: "PATCH",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
       axiosSecure.post("/payments", payment).then((res) => {
         console.log(res.data);
-        if (res.data.result.insertedId) {
+        if (res.data.insertResult.insertedId) {
           Swal.fire({
             position: "top-end",
             icon: "success",

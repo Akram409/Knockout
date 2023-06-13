@@ -10,6 +10,7 @@ const EnrollClass = () => {
         <Helmet>
           <title>Enrolled Class | KnockOut</title>
         </Helmet>
+        <h2 className="text-3xl text-center font-bold mb-5">Enrolled Class</h2>
           <div className="container mx-auto">
           <div className="overflow-x-auto w-full">
             <table className="table table-zebra w-full">
