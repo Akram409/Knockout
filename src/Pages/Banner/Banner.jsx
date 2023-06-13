@@ -1,9 +1,10 @@
+import { useContext } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import useDark from "../../Hooks/useDark";
+import { ThemeContext } from "../../Providers/ThemeContext";
 
 const Banner = () => {
-  const { isDarkMode } = useDark();
+  const { isDarkMode } = useContext(ThemeContext);
   return (
     <Carousel showThumbs={false}>
       <div className={`relative`}>
@@ -12,14 +13,10 @@ const Banner = () => {
           src="https://i.ibb.co/z5YTmxL/banner-1.jpg"
         />
         <div className="absolute top-1/4 left-20 text-left w-1/2">
-          <h1 className={`text-5xl font-bold ${
-            isDarkMode ? "text-white" : "text-black"
-          } mb-8`}>
+          <h1 className={`text-5xl font-bold text-white mb-8`}>
             WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
           </h1>
-          <p className={`text-2xl ${
-            isDarkMode ? "text-white" : "text-black"
-          } mb-10`}>
+          <p className={`text-2xl text-white mb-10`}>
             Karate is martial art and way of life that trains a practitioner to
             be peaceful.
           </p>

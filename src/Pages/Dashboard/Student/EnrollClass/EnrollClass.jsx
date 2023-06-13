@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import useEnrollClass from "../../../../Hooks/useEnrollClass";
+import EnrollClassRow from "./EnrollClassRow";
 
 const EnrollClass = () => {
     const [enrollClasses,,refetch] = useEnrollClass()
@@ -22,9 +23,9 @@ const EnrollClass = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* {enrollClasses.map((item, idx) => (
-                  <SelectedClassRow key={item._id} item={item} refetch={refetch} index={idx}></SelectedClassRow>
-                ))} */}
+                {enrollClasses.map((item, idx) => (
+                  <EnrollClassRow key={item._id} item={item} refetch={refetch} index={idx}></EnrollClassRow>
+                ))}
               </tbody>
             </table>
           </div>

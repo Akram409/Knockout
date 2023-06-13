@@ -9,14 +9,14 @@ import Swal from "sweetalert2";
 const AllclassRow = ({ item, index , refetch }) => {
   const [axiosSecure] = useAxiosSecure();
   const { user } = useContext(AuthContext);
-  const { name, image, instructorName, totalSeats, price } = item;
+  const {_id, name, image, instructorName, totalSeats, price } = item;
   const [isAdmin] = useAdmin();
   const [isInstructors] = useInstructors();
 
   const handleSelect = (data) => {
     data.student_name = user?.displayName
     data.student_email = user?.email
-   
+    data.ClassId = _id
     axiosSecure.post("/selectedClass", data).then((data) => {     
       console.log(data)
       if (data.data.insertedId) {

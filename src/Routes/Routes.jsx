@@ -72,7 +72,7 @@ export const router = createBrowserRouter([
         },
         {
           path: 'payment/:id',
-          element: <Payment></Payment>
+          element: <Payment></Payment>,
         },
         {
           path: 'paymentHistory',

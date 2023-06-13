@@ -15,7 +15,6 @@ const SelectedClassRow = ({ item, index, refetch }) => {
     enrolled,
     ClassId
   } = item;
-  console.log(_id)
 
   const handleDelete = () => {
     Swal.fire({

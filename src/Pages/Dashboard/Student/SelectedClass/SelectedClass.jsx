@@ -4,7 +4,6 @@ import SelectedClassRow from "./SelectedClassRow";
 
 const SelectedClass = () => {
     const [selectedClass,,refetch] = useSelectedClass()
-    console.log(selectedClass)
     return (
         <>
         <Helmet>

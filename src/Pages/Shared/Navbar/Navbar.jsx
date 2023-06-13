@@ -182,7 +182,7 @@ const Navbar = () => {
               ) : (
                 <BsFillMoonStarsFill
                   size="1.5em"
-                  className="cursor-pointer text-red-600"
+                  className="cursor-pointer text-black"
                   onClick={toggleDarkMode}
                 />
               )}

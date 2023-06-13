@@ -4,10 +4,10 @@ import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
-import './Checkout.css'
+import "./Checkout.css";
 import Swal from "sweetalert2";
 
-const Checkout = ({ selectedClass, price,ClassID }) => {
+const Checkout = ({ filter, price, id }) => {
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useContext(AuthContext);
@@ -16,7 +16,6 @@ const Checkout = ({ selectedClass, price,ClassID }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
-
 
   useEffect(() => {
     if (price > 0) {
@@ -77,10 +76,24 @@ const Checkout = ({ selectedClass, price,ClassID }) => {
         transactionId: paymentIntent.id,
         price,
         date: new Date(),
-        quantity: selectedClass.length,
-        itemNames: selectedClass.name,
-        ClassID: ClassID
+        itemNames: filter.name,
+        ClassId: id,
       };
+    fetch(`http://localhost:5000/selectedClass/approve/student/${id}`, {
+        method: "PATCH",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+      fetch(`http://localhost:5000/selectedClass/delete/student/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+
       axiosSecure.post("/payments", payment).then((res) => {
         console.log(res.data);
         if (res.data.result.insertedId) {

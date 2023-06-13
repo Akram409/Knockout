@@ -1,4 +1,4 @@
-const EnrollClassRow = ({ item, index, refetch }) => {
+const EnrollClassRow = ({ item, index }) => {
     const {
         name,
         image,

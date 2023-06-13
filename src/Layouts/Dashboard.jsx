@@ -5,7 +5,7 @@ import {
 } from "react-icons/fa";
 import { CgLogOut } from "react-icons/cg";
 import { FcHome } from "react-icons/fc";
-import { MdOutlineClass,MdOutlinePayment } from "react-icons/md";
+import { MdOutlineClass } from "react-icons/md";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import { SiGoogleclassroom } from "react-icons/si";
 import { BsDatabaseAdd } from "react-icons/bs";
@@ -89,11 +89,6 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/enrollClass">
                   <FaWallet size="1.5em"></FaWallet> <h1 className="text-xl font-bold">Enroll Class</h1>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/payment">
-                  <MdOutlinePayment size="1.5em"/> <h1 className="text-xl font-bold">Payment</h1>
                 </NavLink>
               </li>
               <li>
