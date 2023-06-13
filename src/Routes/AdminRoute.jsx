@@ -1,10 +1,11 @@
 import { Navigate, useLocation } from "react-router";
-import useAuth from "../hooks/useAuth";
 import useAdmin from "../Hooks/useAdmin";
 import Loading from "../Pages/Shared/Loading/Loading";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const AdminRoute = ({ children }) => {
-    const { user, loading } = useAuth();
+    const { user, loading } = useContext(AuthContext)
     const [isAdmin, isAdminLoading] = useAdmin();
     const location = useLocation();
 
