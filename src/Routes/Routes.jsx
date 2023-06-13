@@ -64,7 +64,7 @@ export const router = createBrowserRouter([
         },
         {
           path: 'selectedClass',
-          element: <SelectedClass></SelectedClass>
+        element: <SelectedClass></SelectedClass>
         },
         {
           path: 'enrollClass',

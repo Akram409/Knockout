@@ -21,7 +21,6 @@ const MyClassRow = ({ item, index, refetch }) => {
 
     axiosSecure.put(`/updateClass/${_id}`, data).then((data) => {     
         if (data.data.modifiedCount) {
-        //   reset();
         console.log(data.data)
         refetch()
           Swal.fire({
@@ -183,16 +182,19 @@ const MyClassRow = ({ item, index, refetch }) => {
                   </div>
                 </div>
                 </div>
+                <div className="flex justify-center items-center gap-3">
                 <input
                   className="btn btn-primary font-bold text-white"
-                  type="modal-action"
-                  value="Update Class"
+                  type="submit"
+                  value="Update"
                 />
+                <div className="">
+              <button className="btn btn-error font-bold text-white" onClick={() => document.getElementById("my_modal_4").close()}>Close</button>
+            </div>
+                </div>
               </form>
             </div>
-            <div className="modal-action">
-              <button className="btn">Close</button>
-            </div>
+            
           </div>
         </dialog>
       </td>
