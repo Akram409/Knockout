@@ -7,6 +7,7 @@ import logins from "../../assets/login.json";
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
 import { AuthContext } from "../../Providers/AuthProvider";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -14,15 +15,12 @@ const Login = () => {
   const { logIn,googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   const from = location.state?.from?.pathname || "/";
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const email = form.email.value;
-    const password = form.password.value;
-    console.log(email, password);
+  const handleLogin = (data) => {
+    const { email, password } = data;
     logIn(email, password).then((result) => {
       const user = result.user;
       console.log(user);
@@ -84,7 +82,7 @@ const Login = () => {
             <h1 className="text-5xl font-bold text-white pb-2">Please Login Here !!</h1>
           </div>
             <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
-              <form onSubmit={handleLogin} className="card-body p-[1em]">
+              <form onSubmit={handleSubmit(handleLogin)} className="card-body p-[1em]">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -92,9 +90,11 @@ const Login = () => {
                   <input
                     type="email"
                     name="email"
+                    {...register("email", { required: true })}
                     placeholder="email"
                     className="input input-bordered"
                   />
+                  {errors.email && <p className="text-error">Email is required</p>}
                 </div>
                 <div className="form-control">
                   <label className="label">
@@ -103,10 +103,12 @@ const Login = () => {
                   <input
                     type={show ? "text" : "password"}
                     name="password"
+                    {...register("password", { required: true })}
                     placeholder="password"
                     className="input input-bordered"
                     required
                   />
+                  {errors.password && <p className="text-error">Password is required</p>}
                   <label className="label">
                     <a href="#" className="label-text-alt link link-primary">
                       Forgot password?

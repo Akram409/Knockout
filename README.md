@@ -15,3 +15,4 @@ Live Link : [KnockOut](https://knockout-firebase.web.app/).
 - Student can select class,Buy the class by stripe and watch the payment history
 - Setup the Google,Email and Password login method in the login and register Component.
 - Setup JWT and password Validation in the Register component.
+- For this project we use html,css,reactJs,nodejs,mongoDB,firebase,javascript,tailwind etc
