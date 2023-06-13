@@ -16,7 +16,6 @@ import MyClass from "../Pages/Dashboard/Instructor/MyClass/MyClass";
 import AddClass from "../Pages/Dashboard/Instructor/AddClass/AddClass";
 import PaymentHistory from "../Pages/Dashboard/Student/PaymentHistory/PaymentHistory";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
-import UpdateClass from "../Pages/Dashboard/Instructor/MyClass/UpdateClass";
 import Footer from "../Pages/Shared/Footer/Footer";
 import Error from "../Pages/Shared/Error/Error";
 
@@ -82,10 +81,6 @@ export const router = createBrowserRouter([
         {
           path: 'myClass',
           element: <MyClass></MyClass>
-        },
-        {
-          path: 'updateClass',
-          element: <UpdateClass></UpdateClass>,
         },
         {
           path: 'addClass',

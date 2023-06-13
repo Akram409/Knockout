@@ -3,14 +3,14 @@ import useAlluser from "../../../../Hooks/useAlluser";
 import ManageUserRow from "./ManageUserRow";
 
 const ManageUser = () => {
-    const [user,,refetch] = useAlluser()
-    console.log(user)
-    return (
-      <>
-        <Helmet>
+  const [users, , refetch] = useAlluser();
+  console.log(users);
+  return (
+    <>
+      <Helmet>
         <title>ManageUser | KnockOut</title>
       </Helmet>
-        <div className="container mx-auto ">
+      <div className="container mx-auto ">
         <div className="overflow-x-auto w-full">
           <table className="table table-zebra w-full">
             <thead>
@@ -24,15 +24,20 @@ const ManageUser = () => {
               </tr>
             </thead>
             <tbody>
-              {user.map((item, idx) => (
-                <ManageUserRow key={item._id} item={item} refetch={refetch} index={idx}></ManageUserRow>
-              ))}
+              {/* {users.map((item, idx) => (
+                <ManageUserRow
+                  key={item._id}
+                  item={item}
+                  refetch={refetch}
+                  index={idx}
+                ></ManageUserRow>
+              ))} */}
             </tbody>
           </table>
         </div>
       </div>
-      </>
-    );
+    </>
+  );
 };
 
 export default ManageUser;

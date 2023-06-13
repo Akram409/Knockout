@@ -47,7 +47,7 @@ const AddClass = () => {
           };
           console.log(newItem);
           axiosSecure.post("/addClass", newItem).then((data) => {
-            console.log("after posting new menu item", data.data);
+            console.log(data.data);
             if (data.data.insertedId) {
               reset();
               Swal.fire({
