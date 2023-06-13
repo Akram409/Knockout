@@ -76,7 +76,7 @@ const Checkout = ({ filter, price, id }) => {
         transactionId: paymentIntent.id,
         price,
         date: new Date(),
-        itemNames: filter.name,
+        ClassName: filter.name,
         ClassId: id,
       };
     fetch(`http://localhost:5000/selectedClass/approve/student/${id}`, {
@@ -86,14 +86,6 @@ const Checkout = ({ filter, price, id }) => {
         .then((data) => {
           console.log(data);
         });
-      fetch(`http://localhost:5000/selectedClass/delete/student/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        });
-
       axiosSecure.post("/payments", payment).then((res) => {
         console.log(res.data);
         if (res.data.result.insertedId) {

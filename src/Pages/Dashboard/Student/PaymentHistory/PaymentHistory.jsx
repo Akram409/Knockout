@@ -1,9 +1,15 @@
+import { Helmet } from "react-helmet-async";
+import PaymentHistoryRow from "./PaymentHistoryRow";
+import usePayment from "../../../../Hooks/usePayment";
+
 
 const PaymentHistory = () => {
+    const [payment,paymentloading,refetch] = usePayment()
+    console.log(payment)
     return (
         <>
         <Helmet>
-          <title>Enrolled Class | KnockOut</title>
+          <title>Payment History | KnockOut</title>
         </Helmet>
           <div className="container mx-auto">
           <div className="overflow-x-auto w-full">
@@ -11,15 +17,16 @@ const PaymentHistory = () => {
               <thead>
                 <tr className="text-center font-bold text-black text-sm">
                   <th>SL.</th>
-                  <th>Picture</th>
-                  <th>ClassName</th>
-                  <th>Instructor</th>
-                  <th>Status</th>
+                  <th>Class Name</th>
+                  <th>Email</th>
+                  <th>Price</th>
+                  <th>Date</th>
+                  <th>Transaction ID</th>
                 </tr>
               </thead>
               <tbody>
-                {enrollClasses.map((item, idx) => (
-                  <EnrollClassRow key={item._id} item={item} refetch={refetch} index={idx}></EnrollClassRow>
+                {payment.map((item, idx) => (
+                  <PaymentHistoryRow key={item._id} item={item} paymentloading={paymentloading} refetch={refetch} index={idx}></PaymentHistoryRow>
                 ))}
               </tbody>
             </table>
