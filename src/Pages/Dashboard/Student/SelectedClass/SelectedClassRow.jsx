@@ -13,6 +13,7 @@ const SelectedClassRow = ({ item, index, refetch }) => {
     totalSeats,
     price,
     enrolled,
+    ClassId
   } = item;
   console.log(_id)
 
@@ -58,12 +59,11 @@ const SelectedClassRow = ({ item, index, refetch }) => {
       <td>${price}</td>
       <td>
         <div className="flex flex-col gap-y-3">
-          <Link to="/payment"><button
+          <Link to={`/dashboard/payment/${ClassId}`}><button
             className="btn btn-outline btn-success text-white w-full font-bold"
           >
             PAY
           </button></Link>
-
           <button
             onClick={handleDelete}
             className="btn btn-outline btn-error text-white w-full"

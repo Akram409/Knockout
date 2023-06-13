@@ -5,8 +5,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import './Checkout.css'
+import Swal from "sweetalert2";
 
-const Checkout = ({ selectedClass, price }) => {
+const Checkout = ({ selectedClass, price,ClassID }) => {
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useContext(AuthContext);
@@ -77,15 +78,19 @@ const Checkout = ({ selectedClass, price }) => {
         price,
         date: new Date(),
         quantity: selectedClass.length,
-        cartItems: selectedClass.map((item) => item._id),
-        menuItems: selectedClass.map((item) => item.menuItemId),
-        status: "service pending",
-        itemNames: selectedClass.map((item) => item.name),
+        itemNames: selectedClass.name,
+        ClassID: ClassID
       };
       axiosSecure.post("/payments", payment).then((res) => {
         console.log(res.data);
         if (res.data.result.insertedId) {
-          <h1>Confirmed</h1>;
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Payment Successfull",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       });
     }

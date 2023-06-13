@@ -18,15 +18,18 @@ import PaymentHistory from "../Pages/Dashboard/Student/PaymentHistory/PaymentHis
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
 import UpdateClass from "../Pages/Dashboard/Instructor/MyClass/UpdateClass";
 import Footer from "../Pages/Shared/Footer/Footer";
+import Error from "../Pages/Shared/Error/Error";
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main />,
+      errorElement: <Error />,
       children: [
         {
             path: '/',
-            element: <Home />
+            element: <Home />,
+            errorElement: <Error />,
         },
         {
           path: '/login',
@@ -51,7 +54,7 @@ export const router = createBrowserRouter([
       ]
     },
     {
-      path: '/dashboard',
+      path: 'dashboard',
       element: <Dashboard></Dashboard>,
       children: [
         // Student Routes
@@ -68,7 +71,7 @@ export const router = createBrowserRouter([
           element: <EnrollClass></EnrollClass>
         },
         {
-          path: 'payment',
+          path: 'payment/:id',
           element: <Payment></Payment>
         },
         {

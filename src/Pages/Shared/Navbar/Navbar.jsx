@@ -3,9 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "/public/boxer.png";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
+import { BsFillMoonStarsFill, BsMoonStarsFill } from "react-icons/bs";
+import { ThemeContext } from "../../../Providers/ThemeContext";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
+
   const handleLogOut = () => {
     logOut();
   };
@@ -13,7 +17,9 @@ const Navbar = () => {
   return (
     <>
       <div
-      className={`navbar fixed z-10 bg-opacity-70 px-5 py-5 bg-[#0d1122] text-white`}
+        className={`navbar fixed z-10 bg-opacity-70 px-5 py-5 font-bold ${
+          isDarkMode ? "bg-[#0d1122] text-white" : "bg-white text-black"
+        }`}
       >
         <div className="navbar-start">
           <div className="dropdown">
@@ -122,14 +128,16 @@ const Navbar = () => {
             </li>
             {user ? (
               <>
-              <li>
-              <NavLink
-                to="/dashboard"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                Dashboard
-              </NavLink>
-            </li>
+                <li>
+                  <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) =>
+                      isActive ? "active" : "default"
+                    }
+                  >
+                    Dashboard
+                  </NavLink>
+                </li>
                 <li>
                   <Link to="/" onClick={handleLogOut}>
                     LogOut
@@ -164,68 +172,83 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="dropdown dropdown-end">
-            <label
-              style={{}}
-              tabIndex={0}
-              className="btn btn-ghost btn-circle avatar showName"
-            >
-              {user?.photoURL ? (
-                <div className="w-10 rounded-full img__wrap">
-                  <img className="img__img" src={user?.photoURL} />
-                  <p className="img__description">{user?.displayName}</p>
-                </div>
+            <div className="flex items-center gap-5">
+              {isDarkMode ? (
+                <BsMoonStarsFill
+                  size="1.5em"
+                  className="cursor-pointer"
+                  onClick={toggleDarkMode}
+                />
               ) : (
-                <div className="w-10 rounded-full img__wrap">
-                  <img
-                    className="img__img "
-                    src={
-                      "https://raw.githubusercontent.com/Akram409/Developer-Portfolio/main/images/profile.png"
-                    }
-                  />
-                  <p className="img__description">{user?.displayName}</p>
-                </div>
+                <BsFillMoonStarsFill
+                  size="1.5em"
+                  className="cursor-pointer text-red-600"
+                  onClick={toggleDarkMode}
+                />
               )}
-            </label>
-            <ul
-              tabIndex={0}
-              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-error rounded-box w-52"
-            >
-              <li>
-                <NavLink to="/" className="justify-between">
-                  Profile
-                </NavLink>
-              </li>
-              {user ? (
+              <label
+                style={{}}
+                tabIndex={0}
+                className="btn btn-ghost btn-circle avatar showName"
+              >
+                {user?.photoURL ? (
+                  <div className="w-10 rounded-full img__wrap">
+                    <img className="img__img" src={user?.photoURL} />
+                    <p className="img__description">{user?.displayName}</p>
+                  </div>
+                ) : (
+                  <div className="w-10 rounded-full img__wrap">
+                    <img
+                      className="img__img "
+                      src={
+                        "https://raw.githubusercontent.com/Akram409/Developer-Portfolio/main/images/profile.png"
+                      }
+                    />
+                    <p className="img__description">{user?.displayName}</p>
+                  </div>
+                )}
+              </label>
+              <ul
+                tabIndex={0}
+                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-error rounded-box w-52"
+              >
                 <li>
-                  <NavLink to="/" onClick={handleLogOut}>
-                    LogOut
+                  <NavLink to="/" className="justify-between">
+                    Profile
                   </NavLink>
                 </li>
-              ) : (
-                <>
+                {user ? (
                   <li>
-                    <NavLink
-                      to="/login"
-                      className={({ isActive }) =>
-                        isActive ? "active" : "default"
-                      }
-                    >
-                      Login
+                    <NavLink to="/" onClick={handleLogOut}>
+                      LogOut
                     </NavLink>
                   </li>
-                  <li>
-                    <NavLink
-                      to="/register"
-                      className={({ isActive }) =>
-                        isActive ? "active" : "default"
-                      }
-                    >
-                      Register
-                    </NavLink>
-                  </li>
-                </>
-              )}
-            </ul>
+                ) : (
+                  <>
+                    <li>
+                      <NavLink
+                        to="/login"
+                        className={({ isActive }) =>
+                          isActive ? "active" : "default"
+                        }
+                      >
+                        Login
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/register"
+                        className={({ isActive }) =>
+                          isActive ? "active" : "default"
+                        }
+                      >
+                        Register
+                      </NavLink>
+                    </li>
+                  </>
+                )}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
