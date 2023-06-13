@@ -5,8 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
+
 const Classes = () => {
-  const [classes] = useClass();
+  const [classes,,refetch] = useClass();
 
   const settings = {
     dots: true,
@@ -49,7 +50,7 @@ const Classes = () => {
 
       <Slider className="" {...settings}>
         {classes.map((item) => (
-          <ClassesCard className="gap-3" key={item._id} item={item}></ClassesCard>
+          <ClassesCard className="gap-3" key={item._id} item={item} refetch={refetch}></ClassesCard>
         ))}
       </Slider>
     </div>

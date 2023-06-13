@@ -4,7 +4,6 @@ import ManageUserRow from "./ManageUserRow";
 
 const ManageUser = () => {
   const [users, , refetch] = useAlluser();
-  console.log(users);
   return (
     <>
       <Helmet>
@@ -24,14 +23,14 @@ const ManageUser = () => {
               </tr>
             </thead>
             <tbody>
-              {/* {users.map((item, idx) => (
+              {users.map((item, idx) => (
                 <ManageUserRow
                   key={item._id}
                   item={item}
                   refetch={refetch}
                   index={idx}
                 ></ManageUserRow>
-              ))} */}
+              ))}
             </tbody>
           </table>
         </div>

@@ -5,7 +5,6 @@ const ManageUserRow = ({ item, index ,refetch}) => {
   const { _id, name, image, email, position } = item;
   const [adminClick,setadminClick] = useState(position === 'Admin')
   const [instructorClick,setInstructorClick] = useState(position === 'Instructor')
-  console.log(item)
   const handleAdminRole = () => {
     fetch(`http://localhost:5000/userRole/admin/${_id}`, {
       method: "PATCH",
