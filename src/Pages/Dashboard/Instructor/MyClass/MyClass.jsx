@@ -4,7 +4,6 @@ import MyClassRow from "./MyClassRow";
 
 const MyClass = () => {
   const [Instructors, , refetch] = useMyClass()
-  console.log(Instructors)
   return (
     <>
       <Helmet>

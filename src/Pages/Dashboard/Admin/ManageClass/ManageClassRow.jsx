@@ -30,7 +30,7 @@ const ManageClassRow = ({ item, index, refetch }) => {
   };
 
   const handleSubmit = () => {
-    fetch(`http://localhost:5000/manageClass/feedback/${_id}`, {
+    fetch(`https://summer-camp-school-server-dusky.vercel.app/manageClass/feedback/${_id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const ManageClassRow = ({ item, index, refetch }) => {
     });
   };
   const handleApprove = () => {
-    fetch(`http://localhost:5000/manageClass/approve/admin/${_id}`, {
+    fetch(`https://summer-camp-school-server-dusky.vercel.app/manageClass/approve/admin/${_id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -78,7 +78,7 @@ const ManageClassRow = ({ item, index, refetch }) => {
       });
   };
   const handleDenied = () => {
-    fetch(`http://localhost:5000/manageClass/deny/admin/${_id}`, {
+    fetch(`https://summer-camp-school-server-dusky.vercel.app/manageClass/deny/admin/${_id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())

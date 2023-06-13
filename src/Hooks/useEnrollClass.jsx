@@ -7,7 +7,7 @@ const useEnrollClass = () => {
     const {data: enrollClasses = [], isLoading: loading, refetch} = useQuery({
         queryKey: ['enrollClass'],
         queryFn: async() => {
-            const res = await fetch(`http://localhost:5000/student/enrollClass/${user?.email}`);
+            const res = await fetch(`https://summer-camp-school-server-dusky.vercel.app/student/enrollClass/${user?.email}`);
             return res.json()
         }
     })

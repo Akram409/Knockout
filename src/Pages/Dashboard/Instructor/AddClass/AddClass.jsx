@@ -19,7 +19,6 @@ const AddClass = () => {
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${Image_Hosting_Token}`;
 
   const onSubmit = (data) => {
-    console.log(data)
     data.instructorName = user?.displayName
     data.instructorEmail = user?.email
     const formData = new FormData();
@@ -45,9 +44,7 @@ const AddClass = () => {
             enrolled: parseFloat(0),
             feedback: ""
           };
-          console.log(newItem);
           axiosSecure.post("/addClass", newItem).then((data) => {
-            console.log(data.data);
             if (data.data.insertedId) {
               reset();
               Swal.fire({

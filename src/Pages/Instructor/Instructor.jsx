@@ -3,7 +3,6 @@ import InstructorRow from "./InstructorRow";
 
 const Instructor = () => {
     const [instructors] = useInstructor()
-    console.log(instructors)
   return (
     <div className="container mx-auto pt-28">
       <div className="overflow-x-auto w-full">

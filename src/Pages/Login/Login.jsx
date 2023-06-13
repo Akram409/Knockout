@@ -46,7 +46,7 @@ const Login = () => {
         email: user.email,
         position: "Student"
       };
-      fetch("http://localhost:5000/users", {
+      fetch("https://summer-camp-school-server-dusky.vercel.app/users", {
         method: "POST",
         headers: {
         "content-type": "application/json",

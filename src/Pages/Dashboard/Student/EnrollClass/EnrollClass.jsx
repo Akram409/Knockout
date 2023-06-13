@@ -4,7 +4,6 @@ import EnrollClassRow from "./EnrollClassRow";
 
 const EnrollClass = () => {
     const [enrollClasses,,refetch] = useEnrollClass()
-    console.log(enrollClasses)
     return (
         <>
         <Helmet>

@@ -21,7 +21,6 @@ const MyClassRow = ({ item, index, refetch }) => {
 
     axiosSecure.put(`/updateClass/${_id}`, data).then((data) => {     
         if (data.data.modifiedCount) {
-        console.log(data.data)
         refetch()
           Swal.fire({
             position: "top-end",
@@ -32,7 +31,6 @@ const MyClassRow = ({ item, index, refetch }) => {
           });
         }
       });
-    console.log(data);
   };
   
   return (

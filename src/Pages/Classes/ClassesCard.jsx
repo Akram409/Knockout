@@ -20,7 +20,6 @@ const ClassesCard = ({ item,refetch }) => {
     data.student_email = user?.email;
     data.ClassId = _id;
     axiosSecure.post("/selectedClass", data).then((data) => {
-      console.log(data);
       if (data.data.insertedId) {
         refetch();
         Swal.fire({
