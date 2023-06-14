@@ -21,4 +21,4 @@ Live Link : [KnockOut](https://knockout-firebase.web.app/).
 
 - Admin: admin@gmail.com | AKRAMakram12345#
 - Instructor: hulk@gmail.com | HULKhulk123!@#
-- User: student@gmail.com | STUDENTstudent12!@
+- Student: student@gmail.com | STUDENTstudent12!@
