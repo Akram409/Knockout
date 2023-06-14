@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Fade } from "react-awesome-reveal";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 
-const AdminHome = () => {
+const InstructorHome = () => {
   const { user } = useContext(AuthContext);
   return (
     <div>
@@ -20,4 +20,4 @@ const AdminHome = () => {
   );
 };
 
-export default AdminHome;
+export default InstructorHome;

@@ -22,6 +22,7 @@ import PrivateRoute from "./Privateroute";
 import StudentRoute from "./StudentRoute";
 import InstructorRoute from "./InstructorRoute";
 import AdminRoute from "./AdminRoute";
+import InstructorHome from "../Pages/Dashboard/Instructor/InstructorHome/InstructorHome";
 
 export const router = createBrowserRouter([
     {
@@ -82,6 +83,10 @@ export const router = createBrowserRouter([
           element: <StudentRoute><PaymentHistory></PaymentHistory></StudentRoute>
         },
         // Instructor Routes
+        {
+          path: 'instructorHome',
+          element: <InstructorRoute><InstructorHome></InstructorHome></InstructorRoute>
+        },
         {
           path: 'myClass',
           element: <InstructorRoute><MyClass></MyClass></InstructorRoute>

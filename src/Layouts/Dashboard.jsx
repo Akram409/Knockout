@@ -63,6 +63,11 @@ const Dashboard = () => {
           {isInstructors && (
             <>
               <li>
+                <NavLink to="/dashboard/instructorHome">
+                  <FaHome  size="1.5em"/><h1 className="text-xl font-bold">Instructor Home</h1>
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/dashboard/myClass">
                   <SiGoogleclassroom  size="1.5em"/><h1 className="text-xl font-bold">My Class</h1>
                 </NavLink>
