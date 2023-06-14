@@ -12,7 +12,7 @@ const useInstructor = () => {
     queryKey: ["instructor"],
     enabled: !loading && !!localStorage.getItem("access-token"),
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/instructor");
+      const res = await fetch("https://summer-camp-school-server-dusky.vercel.app/instructor");
       return res.json();
     },
   });

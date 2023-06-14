@@ -6,7 +6,7 @@ const ManageUserRow = ({ item, index ,refetch}) => {
   const [adminClick,setadminClick] = useState(position === 'Admin')
   const [instructorClick,setInstructorClick] = useState(position === 'Instructor')
   const handleAdminRole = () => {
-    fetch(`http://localhost:5000/userRole/admin/${_id}`, {
+    fetch(`https://summer-camp-school-server-dusky.vercel.app/userRole/admin/${_id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -27,7 +27,7 @@ const ManageUserRow = ({ item, index ,refetch}) => {
       });
   };
 const handleInstructorRole = () => {
-    fetch(`http://localhost:5000/userRole/instructor/${_id}`, {
+    fetch(`https://summer-camp-school-server-dusky.vercel.app/userRole/instructor/${_id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())

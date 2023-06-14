@@ -50,7 +50,7 @@ const Classes = () => {
 
       <Slider className="" {...settings}>
         {classes.map((item) => (
-          <ClassesCard className="gap-3" key={item._id} item={item} refetch={refetch}></ClassesCard>
+          <ClassesCard className="lg:gap-3" key={item._id} item={item} refetch={refetch}></ClassesCard>
         ))}
       </Slider>
     </div>

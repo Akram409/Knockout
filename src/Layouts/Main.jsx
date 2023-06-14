@@ -8,7 +8,7 @@ import { ThemeContext } from "../Providers/ThemeContext";
 const Main = () => {
     const location = useLocation();
     const {isDarkMode} = useContext(ThemeContext)
-    const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('register');
+    const noHeaderFooter = location.pathname.includes('error');
 
     return (
         <div className={`${isDarkMode  ? "bg-[#0d1122] text-white" : "bg-white text-black"}`}>

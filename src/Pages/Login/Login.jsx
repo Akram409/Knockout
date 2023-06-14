@@ -46,7 +46,7 @@ const Login = () => {
         email: user.email,
         position: "Student"
       };
-      fetch("http://localhost:5000/users", {
+      fetch("https://summer-camp-school-server-dusky.vercel.app/users", {
         method: "POST",
         headers: {
         "content-type": "application/json",
@@ -70,7 +70,7 @@ const Login = () => {
         <title>Login | KnockOut</title>
       </Helmet>
       <div className="hero min-h-screen bg-[url('/public/Sprinkle.svg')]">
-        <div className="hero-content flex-col md:flex-row">
+        <div className="hero-content flex-col md:flex-row mt-20">
         <div className="relative lg:w-1/2 ">
           <div className="w-full lg:w-4/5  h-56  sm:h-96">
             <Lottie animationData={logins} loop={true} />
@@ -130,6 +130,7 @@ const Login = () => {
                           strokeWidth={1.5}
                           stroke="currentColor"
                           className="w-6 h-6"
+                          color="black"
                         >
                           <path
                             strokeLinecap="round"
@@ -150,6 +151,7 @@ const Login = () => {
                           strokeWidth={1.5}
                           stroke="currentColor"
                           className="w-6 h-6"
+                          color="black"
                         >
                           <path
                             strokeLinecap="round"
@@ -161,7 +163,6 @@ const Login = () => {
                     </div>
                   </label>
                 </div>
-                {/* TODO: make button disabled for captcha */}
                 <div className="form-control">
                   <input
                     disabled={false}
@@ -172,7 +173,7 @@ const Login = () => {
                 </div>
                 <div>
                 <p className="">
-                  <small>
+                  <small className="text-black">
                     New to KnockOut?
                     <Link className="link link-primary pl-1" to="/register">
                       Register here

@@ -4,7 +4,6 @@ import ManageUserRow from "./ManageUserRow";
 
 const ManageUser = () => {
   const [users, , refetch] = useAlluser();
-  console.log(users)
   return (
     <>
       <Helmet>

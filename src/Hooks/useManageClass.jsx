@@ -8,7 +8,7 @@ const useManageClass = () => {
         queryKey: ['manageClass'],
         enabled: !loading && !!localStorage.getItem("access-token"),
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/manageClass');
+            const res = await fetch('https://summer-camp-school-server-dusky.vercel.app/manageClass');
             return res.json();
         }
     })

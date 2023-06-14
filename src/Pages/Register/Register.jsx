@@ -35,7 +35,7 @@ const Register = () => {
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
           const saveUser = { name: data.name, email: data.email , position: "Student" };
-          fetch("http://localhost:5000/users", {
+          fetch("https://summer-camp-school-server-dusky.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -69,7 +69,7 @@ const Register = () => {
           email: user.email,
           position: "Student"
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://summer-camp-school-server-dusky.vercel.app/users", {
           method: "POST",
           headers: {
           "content-type": "application/json",
@@ -93,7 +93,7 @@ const Register = () => {
       </Helmet>
 
       <div className="hero min-h-screen bg-[url('/public/Sprinkle.svg')]">
-        <div className="hero-content flex-col md:flex-row">
+        <div className="hero-content flex-col md:flex-row mt-24 mb-5">
           <div className="relative lg:w-1/2 ">
             <div className="w-full lg:w-4/5  h-56  sm:h-96">
               <Lottie animationData={logins} loop={true} />
@@ -201,10 +201,10 @@ const Register = () => {
                   />
                 </div>
                 <div>
-                  <p className="p-2">
+                  <p className="p-2 text-black">
                     <small>
                       Already have an account?
-                      <Link className="link link-primary" to="/login">
+                      <Link className="link link-primary ml-2" to="/login">
                         Login here
                       </Link>
                     </small>

@@ -55,6 +55,10 @@ export const router = createBrowserRouter([
           path: '/footer',
           element: <Footer />
         },
+        {
+          path: '/error',
+          element: <Error />
+        },
       ]
     },
     {

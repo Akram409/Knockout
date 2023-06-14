@@ -8,7 +8,7 @@ const useClass = () => {
         queryKey: ['class'],
         enabled: !loading && !!localStorage.getItem("access-token"),
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/class');
+            const res = await fetch('https://summer-camp-school-server-dusky.vercel.app/class');
             return res.json();
         }
     })

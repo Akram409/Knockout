@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="container mx-auto mt-20">
       <SectionTitle heading="About Us"></SectionTitle>
-      <div className="grid grid-cols-2 gap-5 bg-[#0d1122] text-white">
+      <div className="grid lg:grid-cols-2 gap-5 bg-[#0d1122] text-white">
         <div>
           <img src={about} alt="" />
         </div>
